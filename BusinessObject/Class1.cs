@@ -4,6 +4,6 @@ namespace BusinessObject
 {
     public class Class1
     {
-        public String name { get; set }
+        public string name { get; set; }
     }
 }
