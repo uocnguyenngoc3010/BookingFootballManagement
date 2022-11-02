@@ -7470,19 +7470,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\trinh\\.nuget\\packages\\": {}
+    "C:\\Users\\KawaiiScorpy\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\workSpace\\homeWork\\Prn221\\BookingFootballManagement\\DataAccess\\DataAccess.csproj",
+      "projectUniqueName": "D:\\C# code\\BookingFootballManagement\\DataAccess\\DataAccess.csproj",
       "projectName": "DataAccess",
-      "projectPath": "D:\\workSpace\\homeWork\\Prn221\\BookingFootballManagement\\DataAccess\\DataAccess.csproj",
-      "packagesPath": "C:\\Users\\trinh\\.nuget\\packages\\",
-      "outputPath": "D:\\workSpace\\homeWork\\Prn221\\BookingFootballManagement\\DataAccess\\obj\\",
+      "projectPath": "D:\\C# code\\BookingFootballManagement\\DataAccess\\DataAccess.csproj",
+      "packagesPath": "C:\\Users\\KawaiiScorpy\\.nuget\\packages\\",
+      "outputPath": "D:\\C# code\\BookingFootballManagement\\DataAccess\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\trinh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\KawaiiScorpy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7496,8 +7501,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\workSpace\\homeWork\\Prn221\\BookingFootballManagement\\BookingFootballField\\BookingFootballField.csproj": {
-              "projectPath": "D:\\workSpace\\homeWork\\Prn221\\BookingFootballManagement\\BookingFootballField\\BookingFootballField.csproj"
+            "D:\\C# code\\BookingFootballManagement\\BookingFootballField\\BookingFootballField.csproj": {
+              "projectPath": "D:\\C# code\\BookingFootballManagement\\BookingFootballField\\BookingFootballField.csproj"
             }
           }
         }
@@ -7543,7 +7548,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   },

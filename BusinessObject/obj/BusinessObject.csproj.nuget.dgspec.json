@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\workSpace\\homeWork\\Prn221\\BookingFootballManagement\\BusinessObject\\BusinessObject.csproj": {}
+    "D:\\C# code\\BookingFootballManagement\\BusinessObject\\BusinessObject.csproj": {}
   },
   "projects": {
-    "D:\\workSpace\\homeWork\\Prn221\\BookingFootballManagement\\BookingFootballField\\BookingFootballField.csproj": {
+    "D:\\C# code\\BookingFootballManagement\\BookingFootballField\\BookingFootballField.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\workSpace\\homeWork\\Prn221\\BookingFootballManagement\\BookingFootballField\\BookingFootballField.csproj",
+        "projectUniqueName": "D:\\C# code\\BookingFootballManagement\\BookingFootballField\\BookingFootballField.csproj",
         "projectName": "BookingFootballField",
-        "projectPath": "D:\\workSpace\\homeWork\\Prn221\\BookingFootballManagement\\BookingFootballField\\BookingFootballField.csproj",
-        "packagesPath": "C:\\Users\\trinh\\.nuget\\packages\\",
-        "outputPath": "D:\\workSpace\\homeWork\\Prn221\\BookingFootballManagement\\BookingFootballField\\obj\\",
+        "projectPath": "D:\\C# code\\BookingFootballManagement\\BookingFootballField\\BookingFootballField.csproj",
+        "packagesPath": "C:\\Users\\KawaiiScorpy\\.nuget\\packages\\",
+        "outputPath": "D:\\C# code\\BookingFootballManagement\\BookingFootballField\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\trinh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\KawaiiScorpy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -80,21 +84,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\workSpace\\homeWork\\Prn221\\BookingFootballManagement\\BusinessObject\\BusinessObject.csproj": {
+    "D:\\C# code\\BookingFootballManagement\\BusinessObject\\BusinessObject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\workSpace\\homeWork\\Prn221\\BookingFootballManagement\\BusinessObject\\BusinessObject.csproj",
+        "projectUniqueName": "D:\\C# code\\BookingFootballManagement\\BusinessObject\\BusinessObject.csproj",
         "projectName": "BusinessObject",
-        "projectPath": "D:\\workSpace\\homeWork\\Prn221\\BookingFootballManagement\\BusinessObject\\BusinessObject.csproj",
-        "packagesPath": "C:\\Users\\trinh\\.nuget\\packages\\",
-        "outputPath": "D:\\workSpace\\homeWork\\Prn221\\BookingFootballManagement\\BusinessObject\\obj\\",
+        "projectPath": "D:\\C# code\\BookingFootballManagement\\BusinessObject\\BusinessObject.csproj",
+        "packagesPath": "C:\\Users\\KawaiiScorpy\\.nuget\\packages\\",
+        "outputPath": "D:\\C# code\\BookingFootballManagement\\BusinessObject\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\trinh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\KawaiiScorpy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -108,8 +116,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\workSpace\\homeWork\\Prn221\\BookingFootballManagement\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "D:\\workSpace\\homeWork\\Prn221\\BookingFootballManagement\\DataAccess\\DataAccess.csproj"
+              "D:\\C# code\\BookingFootballManagement\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "D:\\C# code\\BookingFootballManagement\\DataAccess\\DataAccess.csproj"
               }
             }
           }
@@ -155,21 +163,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\workSpace\\homeWork\\Prn221\\BookingFootballManagement\\DataAccess\\DataAccess.csproj": {
+    "D:\\C# code\\BookingFootballManagement\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\workSpace\\homeWork\\Prn221\\BookingFootballManagement\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "D:\\C# code\\BookingFootballManagement\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "D:\\workSpace\\homeWork\\Prn221\\BookingFootballManagement\\DataAccess\\DataAccess.csproj",
-        "packagesPath": "C:\\Users\\trinh\\.nuget\\packages\\",
-        "outputPath": "D:\\workSpace\\homeWork\\Prn221\\BookingFootballManagement\\DataAccess\\obj\\",
+        "projectPath": "D:\\C# code\\BookingFootballManagement\\DataAccess\\DataAccess.csproj",
+        "packagesPath": "C:\\Users\\KawaiiScorpy\\.nuget\\packages\\",
+        "outputPath": "D:\\C# code\\BookingFootballManagement\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\trinh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\KawaiiScorpy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -183,8 +195,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\workSpace\\homeWork\\Prn221\\BookingFootballManagement\\BookingFootballField\\BookingFootballField.csproj": {
-                "projectPath": "D:\\workSpace\\homeWork\\Prn221\\BookingFootballManagement\\BookingFootballField\\BookingFootballField.csproj"
+              "D:\\C# code\\BookingFootballManagement\\BookingFootballField\\BookingFootballField.csproj": {
+                "projectPath": "D:\\C# code\\BookingFootballManagement\\BookingFootballField\\BookingFootballField.csproj"
               }
             }
           }
@@ -230,7 +242,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
