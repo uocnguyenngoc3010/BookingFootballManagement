@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< Updated upstream
     "D:\\C# code\\BookingFootballManagement\\DataAccess\\DataAccess.csproj": {}
   },
   "projects": {
@@ -12,13 +13,27 @@
         "projectPath": "D:\\C# code\\BookingFootballManagement\\BookingFootballField\\BookingFootballField.csproj",
         "packagesPath": "C:\\Users\\KawaiiScorpy\\.nuget\\packages\\",
         "outputPath": "D:\\C# code\\BookingFootballManagement\\BookingFootballField\\obj\\",
+=======
+    "D:\\workSpace\\homeWork\\Prn221\\BookingFootballManagement\\DataAccess\\DataAccess.csproj": {}
+  },
+  "projects": {
+    "D:\\workSpace\\homeWork\\Prn221\\BookingFootballManagement\\BookingFootballField\\BookingFootballField.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\workSpace\\homeWork\\Prn221\\BookingFootballManagement\\BookingFootballField\\BookingFootballField.csproj",
+        "projectName": "BookingFootballField",
+        "projectPath": "D:\\workSpace\\homeWork\\Prn221\\BookingFootballManagement\\BookingFootballField\\BookingFootballField.csproj",
+        "packagesPath": "C:\\Users\\trinh\\.nuget\\packages\\",
+        "outputPath": "D:\\workSpace\\homeWork\\Prn221\\BookingFootballManagement\\BookingFootballField\\obj\\",
+>>>>>>> Stashed changes
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
+<<<<<<< Updated upstream
           "C:\\Users\\KawaiiScorpy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+=======
+          "C:\\Users\\trinh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> Stashed changes
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -31,7 +46,11 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\workSpace\\homeWork\\Prn221\\BookingFootballManagement\\BusinessObject\\BusinessObject.csproj": {
+                "projectPath": "D:\\workSpace\\homeWork\\Prn221\\BookingFootballManagement\\BusinessObject\\BusinessObject.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -84,6 +103,7 @@
               "privateAssets": "all"
             }
           },
+<<<<<<< Updated upstream
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
@@ -96,13 +116,23 @@
         "projectPath": "D:\\C# code\\BookingFootballManagement\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\KawaiiScorpy\\.nuget\\packages\\",
         "outputPath": "D:\\C# code\\BookingFootballManagement\\DataAccess\\obj\\",
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\workSpace\\homeWork\\Prn221\\BookingFootballManagement\\BusinessObject\\BusinessObject.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\workSpace\\homeWork\\Prn221\\BookingFootballManagement\\BusinessObject\\BusinessObject.csproj",
+        "projectName": "BusinessObject",
+        "projectPath": "D:\\workSpace\\homeWork\\Prn221\\BookingFootballManagement\\BusinessObject\\BusinessObject.csproj",
+        "packagesPath": "C:\\Users\\trinh\\.nuget\\packages\\",
+        "outputPath": "D:\\workSpace\\homeWork\\Prn221\\BookingFootballManagement\\BusinessObject\\obj\\",
+>>>>>>> Stashed changes
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\KawaiiScorpy\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\trinh\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -115,11 +145,7 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {
-              "D:\\C# code\\BookingFootballManagement\\BookingFootballField\\BookingFootballField.csproj": {
-                "projectPath": "D:\\C# code\\BookingFootballManagement\\BookingFootballField\\BookingFootballField.csproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {
@@ -134,7 +160,7 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[5.0.10, )"
+              "version": "[5.0.17, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -163,7 +189,96 @@
               "privateAssets": "all"
             }
           },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\workSpace\\homeWork\\Prn221\\BookingFootballManagement\\DataAccess\\DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\workSpace\\homeWork\\Prn221\\BookingFootballManagement\\DataAccess\\DataAccess.csproj",
+        "projectName": "DataAccess",
+        "projectPath": "D:\\workSpace\\homeWork\\Prn221\\BookingFootballManagement\\DataAccess\\DataAccess.csproj",
+        "packagesPath": "C:\\Users\\trinh\\.nuget\\packages\\",
+        "outputPath": "D:\\workSpace\\homeWork\\Prn221\\BookingFootballManagement\\DataAccess\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+<<<<<<< Updated upstream
+          "C:\\Users\\KawaiiScorpy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+=======
+          "C:\\Users\\trinh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> Stashed changes
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+<<<<<<< Updated upstream
+              "D:\\C# code\\BookingFootballManagement\\BookingFootballField\\BookingFootballField.csproj": {
+                "projectPath": "D:\\C# code\\BookingFootballManagement\\BookingFootballField\\BookingFootballField.csproj"
+=======
+              "D:\\workSpace\\homeWork\\Prn221\\BookingFootballManagement\\BookingFootballField\\BookingFootballField.csproj": {
+                "projectPath": "D:\\workSpace\\homeWork\\Prn221\\BookingFootballManagement\\BookingFootballField\\BookingFootballField.csproj"
+>>>>>>> Stashed changes
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.10, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+<<<<<<< Updated upstream
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+>>>>>>> Stashed changes
         }
       }
     }
