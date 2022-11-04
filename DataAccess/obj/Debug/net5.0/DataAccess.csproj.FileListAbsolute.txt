@@ -16,3 +16,4 @@ D:\C# code\BookingFootballManagement\DataAccess\obj\Debug\net5.0\refint\DataAcce
 D:\C# code\BookingFootballManagement\DataAccess\obj\Debug\net5.0\DataAccess.pdb
 D:\C# code\BookingFootballManagement\DataAccess\obj\Debug\net5.0\DataAccess.genruntimeconfig.cache
 D:\C# code\BookingFootballManagement\DataAccess\obj\Debug\net5.0\ref\DataAccess.dll
+D:\C# code\BookingFootballManagement\DataAccess\bin\Debug\net5.0\appsettings.json

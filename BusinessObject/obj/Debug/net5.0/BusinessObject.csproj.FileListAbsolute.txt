@@ -13,3 +13,4 @@ D:\C# code\BookingFootballManagement\BusinessObject\obj\Debug\net5.0\refint\Busi
 D:\C# code\BookingFootballManagement\BusinessObject\obj\Debug\net5.0\BusinessObject.pdb
 D:\C# code\BookingFootballManagement\BusinessObject\obj\Debug\net5.0\BusinessObject.genruntimeconfig.cache
 D:\C# code\BookingFootballManagement\BusinessObject\obj\Debug\net5.0\ref\BusinessObject.dll
+D:\C# code\BookingFootballManagement\BusinessObject\bin\Debug\net5.0\appsettings.json
