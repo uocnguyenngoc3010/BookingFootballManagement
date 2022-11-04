@@ -7186,11 +7186,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\PRN221\\FootballManagement\\BusinessObject\\BusinessObject.csproj",
+      "projectUniqueName": "E:\\PRN221\\Football\\BookingFootballManagement\\BusinessObject\\BusinessObject.csproj",
       "projectName": "BusinessObject",
-      "projectPath": "E:\\PRN221\\FootballManagement\\BusinessObject\\BusinessObject.csproj",
+      "projectPath": "E:\\PRN221\\Football\\BookingFootballManagement\\BusinessObject\\BusinessObject.csproj",
       "packagesPath": "C:\\Users\\Hi\\.nuget\\packages\\",
-      "outputPath": "E:\\PRN221\\FootballManagement\\BusinessObject\\obj\\",
+      "outputPath": "E:\\PRN221\\Football\\BookingFootballManagement\\BusinessObject\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -7211,8 +7211,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "E:\\PRN221\\FootballManagement\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "E:\\PRN221\\FootballManagement\\DataAccess\\DataAccess.csproj"
+            "E:\\PRN221\\Football\\BookingFootballManagement\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "E:\\PRN221\\Football\\BookingFootballManagement\\DataAccess\\DataAccess.csproj"
             }
           }
         }

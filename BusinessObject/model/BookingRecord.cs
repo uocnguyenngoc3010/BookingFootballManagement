@@ -3,7 +3,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace BusinessObject.model
+namespace BusinessObject.Model
 {
     public partial class BookingRecord
     {

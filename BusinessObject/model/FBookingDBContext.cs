@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace BusinessObject.model
+namespace BusinessObject.Model
 {
     public partial class FBookingDBContext : DbContext
     {
@@ -25,13 +25,6 @@ namespace BusinessObject.model
         public virtual DbSet<FootballField> FootballField { get; set; }
         public virtual DbSet<Staff> Staff { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlServer("server =(local); database = FBookingDB;uid=sa;pwd=123;");
-            }
-        }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<BlackList>(entity =>
@@ -46,7 +39,7 @@ namespace BusinessObject.model
                     .WithMany(p => p.BlackList)
                     .HasForeignKey(d => d.CustomerId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__BlackList__Custo__45F365D3");
+                    .HasConstraintName("FK__BlackList__Custo__4222D4EF");
             });
 
             modelBuilder.Entity<BookingRecord>(entity =>
@@ -61,13 +54,13 @@ namespace BusinessObject.model
                     .WithMany(p => p.BookingRecord)
                     .HasForeignKey(d => d.BookingRequestId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__BookingRe__Booki__4222D4EF");
+                    .HasConstraintName("FK__BookingRe__Booki__4316F928");
 
                 entity.HasOne(d => d.Staff)
                     .WithMany(p => p.BookingRecord)
                     .HasForeignKey(d => d.StaffId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__BookingRe__Staff__4316F928");
+                    .HasConstraintName("FK__BookingRe__Staff__440B1D61");
             });
 
             modelBuilder.Entity<BookingRequest>(entity =>
@@ -86,18 +79,18 @@ namespace BusinessObject.model
                     .WithMany(p => p.BookingRequest)
                     .HasForeignKey(d => d.CustomerId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__BookingRe__Custo__3F466844");
+                    .HasConstraintName("FK__BookingRe__Custo__44FF419A");
 
                 entity.HasOne(d => d.Field)
                     .WithMany(p => p.BookingRequest)
                     .HasForeignKey(d => d.FieldId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__BookingRe__Field__3E52440B");
+                    .HasConstraintName("FK__BookingRe__Field__45F365D3");
             });
 
             modelBuilder.Entity<Customer>(entity =>
             {
-                entity.HasIndex(e => e.Email, "UQ__Customer__A9D10534A7B2EE45")
+                entity.HasIndex(e => e.Email, "UQ__Customer__A9D10534326497BD")
                     .IsUnique();
 
                 entity.Property(e => e.Dob).HasColumnType("date");
@@ -130,7 +123,7 @@ namespace BusinessObject.model
 
             modelBuilder.Entity<Staff>(entity =>
             {
-                entity.HasIndex(e => e.Email, "UQ__Staff__A9D10534CEA4C3E2")
+                entity.HasIndex(e => e.Email, "UQ__Staff__A9D105346A7839AF")
                     .IsUnique();
 
                 entity.Property(e => e.Email)

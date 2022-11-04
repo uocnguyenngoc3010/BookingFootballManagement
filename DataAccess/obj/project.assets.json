@@ -7166,11 +7166,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\PRN221\\FootballManagement\\DataAccess\\DataAccess.csproj",
+      "projectUniqueName": "E:\\PRN221\\Football\\BookingFootballManagement\\DataAccess\\DataAccess.csproj",
       "projectName": "DataAccess",
-      "projectPath": "E:\\PRN221\\FootballManagement\\DataAccess\\DataAccess.csproj",
+      "projectPath": "E:\\PRN221\\Football\\BookingFootballManagement\\DataAccess\\DataAccess.csproj",
       "packagesPath": "C:\\Users\\Hi\\.nuget\\packages\\",
-      "outputPath": "E:\\PRN221\\FootballManagement\\DataAccess\\obj\\",
+      "outputPath": "E:\\PRN221\\Football\\BookingFootballManagement\\DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -7191,8 +7191,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "E:\\PRN221\\FootballManagement\\BookingFootballField\\BookingFootballField.csproj": {
-              "projectPath": "E:\\PRN221\\FootballManagement\\BookingFootballField\\BookingFootballField.csproj"
+            "E:\\PRN221\\Football\\BookingFootballManagement\\BookingFootballField\\BookingFootballField.csproj": {
+              "projectPath": "E:\\PRN221\\Football\\BookingFootballManagement\\BookingFootballField\\BookingFootballField.csproj"
             }
           }
         }

@@ -3,7 +3,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace BusinessObject.model
+namespace BusinessObject.Model
 {
     public partial class FootballField
     {
@@ -17,6 +17,7 @@ namespace BusinessObject.model
         public int Capacity { get; set; }
         public double Price { get; set; }
         public string Status { get; set; }
+        public string Image { get; set; }
 
         public virtual ICollection<BookingRequest> BookingRequest { get; set; }
     }

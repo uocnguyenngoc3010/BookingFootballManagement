@@ -7,7 +7,7 @@
    "IncludeConnectionString": false,
    "ModelNamespace": null,
    "OutputContextPath": null,
-   "OutputPath": "model",
+   "OutputPath": "Model",
    "ProjectRootNamespace": "BusinessObject",
    "Schemas": null,
    "SelectedHandlebarsLanguage": 0,

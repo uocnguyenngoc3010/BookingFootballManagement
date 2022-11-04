@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hanD60nngeyl0s8JKWucfHW/EEV1ejTMJ6lXIsAp+J+84L5Mo78AM46o3dTGKM3+YTEQrTYPG0uvH8g/h9WOUw==",
+  "dgSpecHash": "OwhoUSUyCuOMyQUdFVAn93bSRntTp3IXmH1in1cR+ZvEzay1oWPmvoCIkUB1EYw/gibRYH8grlHXdIBQRDsbfg==",
   "success": false,
-  "projectFilePath": "E:\\PRN221\\FootballManagement\\BusinessObject\\BusinessObject.csproj",
+  "projectFilePath": "E:\\PRN221\\Football\\BookingFootballManagement\\BusinessObject\\BusinessObject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Hi\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Hi\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
