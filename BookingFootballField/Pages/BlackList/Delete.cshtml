@@ -1,4 +1,38 @@
 ﻿@page
 @model BookingFootballField.Pages.BlackList.DeleteModel
 @{
+    ViewData["Title"] = "Unban";
 }
+
+<h1 style="margin-top: 7rem;">Unban</h1>
+
+<h3>Are you sure you want to unban this?</h3>
+<div>    
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BlackList.BanDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BlackList.BanDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BlackList.Reason)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BlackList.Reason)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BlackList.Customer)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Customer.Email)
+        </dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="BlackList.Id" />
+        <input type="submit" value="Unban" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to Black List</a>
+    </form>
+</div>

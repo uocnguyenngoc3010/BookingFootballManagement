@@ -1,4 +1,36 @@
 ﻿@page
 @model BookingFootballField.Pages.BlackList.DetailsModel
 @{
+    ViewData["Title"] = "Details";
 }
+
+<h1>Details</h1>
+
+<div>
+    <h4>BlackList</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BlackList.BanDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BlackList.BanDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BlackList.Reason)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BlackList.Reason)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BlackList.Customer)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BlackList.Customer.Email)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.BlackList.Id">Edit</a> |
+    <a asp-page="./Index">Back to Black List</a>
+</div>

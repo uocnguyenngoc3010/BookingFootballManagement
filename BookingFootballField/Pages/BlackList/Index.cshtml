@@ -1,4 +1,79 @@
 ﻿@page
+@using DataAccess.Repository
 @model BookingFootballField.Pages.BlackList.IndexModel
 @{
+    ViewData["Title"] = "Index";
 }
+
+<h1>BlackList</h1>
+
+<p>
+    <a asp-page="Ban">Ban</a>
+</p>
+<div>
+    <a asp-page="BlackListHistory">Black list history</a>
+</div>
+@{
+    ICustomerRepository customerRepository = new CustomerRepository();
+    IBlackListRepository blackListRepository = new BlackListRepository();
+    IList<BusinessObject.Model.Customer> listcus = customerRepository.GetList();
+    IList<BusinessObject.Model.BlackList> listblack = blackListRepository.GetList();
+}
+<table class="table">
+            <thead>
+            <tr>
+                <th>
+                @Html.DisplayNameFor(model => model.BlackList[0].BanDate)
+                </th>
+                <th>
+                @Html.DisplayNameFor(model => model.BlackList[0].Reason)
+                </th>
+                <th>
+                @Html.DisplayNameFor(model => model.BlackList[0].Customer)
+                </th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+
+        @foreach (var item in listcus)
+        {
+            @if (item.Status == false)
+            {
+                        <tr>
+                    @{
+                        BusinessObject.Model.BlackList blacklist = new BusinessObject.Model.BlackList();
+                        foreach (var list in listblack)
+                        {
+                            if (list != null)
+                            {
+                                if (list.CustomerId == item.Id)
+                                {
+                                    blacklist = list;
+                                }
+                            }
+
+                        }
+                                <td>
+                            @Html.DisplayFor(modelItem => blacklist.BanDate)
+                                </td>
+                                <td>
+                            @Html.DisplayFor(modelItem => blacklist.Reason)
+                                </td>
+                                <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                                </td>
+
+                                <td>
+                                    <a asp-page="./Edit" asp-route-id="@blacklist.Id">Edit</a> |
+                                    <a asp-page="./Details" asp-route-id="@blacklist.Id">Details</a> |
+                                    <a asp-page="./Delete" asp-route-id="@blacklist.Id">Unban</a>
+                                </td>
+                    }
+                        </tr>
+            }
+
+        }
+            </tbody>
+
+</table>

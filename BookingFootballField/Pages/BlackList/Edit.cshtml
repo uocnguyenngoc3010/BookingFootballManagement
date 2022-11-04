@@ -1,4 +1,41 @@
 ﻿@page
 @model BookingFootballField.Pages.BlackList.EditModel
 @{
+    ViewData["Title"] = "Edit";
 }
+
+<h1>Edit</h1>
+
+<h4>BlackList</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="BlackList.Id" />                        
+
+            <div class="form-group">
+                <label asp-for="BlackList.CustomerId" class="control-label"></label>
+                <input asp-for="BlackList.CustomerId" class="form-control" readonly/>
+                <span asp-validation-for="BlackList.CustomerId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="BlackList.BanDate" class="control-label"></label>
+                <input asp-for="BlackList.BanDate" class="form-control" readonly/>
+                <span asp-validation-for="BlackList.BanDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="BlackList.Reason" class="control-label"></label>
+                <input asp-for="BlackList.Reason" class="form-control" />
+                <span asp-validation-for="BlackList.Reason" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+

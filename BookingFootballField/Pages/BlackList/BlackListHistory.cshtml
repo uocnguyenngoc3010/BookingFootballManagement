@@ -1,4 +1,65 @@
 ﻿@page
+@using DataAccess.Repository
+@using BusinessObject.Model
 @model BookingFootballField.Pages.BlackList.BlackListHistoryModel
 @{
 }
+<h1>Black List History</h1>
+<div>
+    <a asp-page="Ban">Ban</a>
+</div>
+<div>
+    <a asp-page="Index">Black List</a>
+</div>
+@{
+    ICustomerRepository customerRepository = new CustomerRepository();
+    IBlackListRepository blackListRepository = new BlackListRepository();
+    IList<BusinessObject.Model.Customer> listcus = customerRepository.GetList();
+    IList<BusinessObject.Model.BlackList> listblack = blackListRepository.GetList();
+}
+<table class="table">
+            <thead>
+            <tr>
+                <th>
+                @Html.DisplayNameFor(model => model.BlackList[0].BanDate)
+                </th>
+                <th>
+                @Html.DisplayNameFor(model => model.BlackList[0].Reason)
+                </th>
+                <th>
+                @Html.DisplayNameFor(model => model.BlackList[0].Customer)
+                </th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+
+        @foreach (var item in listblack)
+        {
+                    <tr>
+                        <td>
+                    @Html.DisplayFor(modelItem => item.BanDate)
+                        </td>
+                        <td>
+                    @Html.DisplayFor(modelItem => item.Reason)
+                        </td>
+                @{
+                    Customer customer = new Customer();
+                    foreach (var cus in listcus)
+                    {
+                        if (item.CustomerId == cus.Id)
+                        {
+                            customer = cus;
+                        }
+                    }
+                }
+                        <td>
+                    @Html.DisplayFor(modelItem => customer.Email)
+                        </td>
+
+                    </tr>
+
+        }
+            </tbody>
+
+</table>
