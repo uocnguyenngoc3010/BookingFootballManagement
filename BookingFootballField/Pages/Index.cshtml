@@ -1,10 +1,122 @@
 ﻿@page
 @model IndexModel
-@{
-    ViewData["Title"] = "Home page";
-}
+<!-- ***** Header Area End ***** -->
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    <!-- ***** Main Banner Area Start ***** -->
+    <div class="main-banner" id="top">
+        <div class="imgFootball">
+            <img src="~/img/yyuu.jpg" alt="....">
+        </div>
+
+        <div class="">
+            <div class="caption">
+                <h6>Booking a football field, organizing a football tournament</h6>
+                <h2> <em>easy to book soccer field</em></h2>
+                <div class="main-button scroll-to-section">
+                    <a asp-page="/BookingField/Index">Book Now</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- ***** Main Banner Area End ***** -->
+
+@*thanh toán*@ 
+        <section class="section" id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="section-heading">
+                        <h2> <em>Payment</em></h2>
+                        <img src="~/img/line-dec.png" alt="waves">
+                        <p>E-wallets will make it convenient for users to pay when booking a yard or when they forget to bring money...</p>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-6">
+                    <ul class="features-items">
+                        <li class="feature-item" style="display:flex;justify-content:center">
+                            <div class="right-icon">
+                                <p style="margin: 0 7rem;">Momo - 090 8731453</p>
+                                <p style="margin: 0 8.5rem;">Trần Khắc Đại</p>
+                                <img src="~/img/QR_Momo.png" alt="444">
+
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+
+
+                <div class="col-lg-6">
+                    <li class="features-items" style="display:flex;justify-content:center">
+                        <div class="left-icon" >
+                            <p style="margin: 0 7rem; justify-content: center;font-weight:500">ZaloPay - 090 8731453</p>
+                            <p style="margin: 0 8.5rem;font-weight:500">Trần Khắc Đại</p>
+                            <img style="width:345px;height:350px;margin-top: 5px;" src="~/img/QR_Zalo.png" alt="555">
+                        </div>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Features Item Start ***** -->
+
+    <!-- ***** Call to Action End ***** -->
+    <section class="section" id="contact-us">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="section-heading">
+                        <h2 id="#our-classes"> <em>Contact</em> </h2>
+                        <img src="~/img/line-dec.png" alt="">
+                        <p>Below is basic information about the school and the football field manager to make it easier
+                           for you to connect with us.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <div class="map" id="map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62697.53977692746!2d106.73725393971763!3d10.842179228044717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752716f53974dd%3A0x6a05d4b289cee5c9!2zU8OibiBCw7NuZyBMYW0gU8ahbg!5e0!3m2!1svi!2s!4v1654705555037!5m2!1svi!2s"
+                            width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <div class="imgFootballField">
+                        <img src="~/img/images.png" alt="....">
+                        <div class="down-content">
+
+                            <h2>Contact Infor</h2>
+                            <h5> <em> Name:</em> sân bóng vui vẻ</h5>
+                            <p> <em> Email:</em> sanbong123@gmail.com<br>
+                               <em>Sđt:</em> 0127894562</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- ////////////////////////////////// -->
+
+    </section>
+    <!-- ***** Contact Us Area Ends ***** -->
+
+    <!-- ***** Footer Start ***** -->
+    <hr style="height: 20px;">
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="end">
+                        <!-- SE1504 - PRN221 Project By <emb>FOUR</emb> Group <br> -->
+                        &copy; 2022 Football Field Booking
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>

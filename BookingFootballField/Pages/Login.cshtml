@@ -1,4 +1,80 @@
 ﻿@page
 @model BookingFootballField.Pages.LoginModel
-@{
+@{  
+    Layout = null;
 }
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking Field Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/Login.css" />
+
+
+</head>
+
+<body>
+    <header>
+        <div class="headerTitle">        
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="headerTitleLeft">
+                            <h1> Football <br>
+                                Field Management
+                            </h1>
+                            <div class="headerTitleRight3">
+                                <form>
+                                    <button type="submit">
+                                        <div class="headerTitleRight3Detail">
+                                            <a href="https://localhost:5001/">Home Page</a>
+                                        </div>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="headerTitleRightContainer ">
+                            <div class="headerTitleRight">
+                                <div class="headerTitleRight1">
+                                    <p>Welcome back</p>
+                                </div>
+                                <div class="headerTitleRight2">
+                                    <h5>Login to your account</h5>
+                                </div>
+                                <div class="form">
+                                    <form class="content-form" method="post" asp-page="login">
+                                        <div class="inputLog">
+                                            <span>Gmail</span>
+                                            <input type="text" name="email" placeholder="Email">
+                                        </div>
+                                        <div class="inputLog">
+                                            <span>Password</span>
+                                            <input type="password" name="password" placeholder="Password">
+                                        </div>    
+                                        <div class="inputLog">
+                                            <input class="submit" type="submit" value="Sign in">
+                                        </div>
+                                        <p style="background-color:#f4d6d2;color:#2d3436; font-weight:500">@ViewData["errmsg"] </p>
+                                        <div class="inputLog">
+                                            <p>Don't have an account? <a asp-page="/Register">Sign up</a></p>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </header>
+</body>
+
+</html>

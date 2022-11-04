@@ -24,7 +24,13 @@ namespace BusinessObject.Model
         public virtual DbSet<Customer> Customer { get; set; }
         public virtual DbSet<FootballField> FootballField { get; set; }
         public virtual DbSet<Staff> Staff { get; set; }
-
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer("server =localhost; database = FBookingDB;uid=sa;pwd=123;");
+            }
+        }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<BlackList>(entity =>
