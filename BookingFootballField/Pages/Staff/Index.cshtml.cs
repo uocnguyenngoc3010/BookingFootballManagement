@@ -21,7 +21,7 @@ namespace BookingFootballField.Pages.Staffs
             _staffRepository = new StaffRepository();
         }
 
-        public IList<BusinessObject.Model.Staff> staff { get; set; }
+        public IList<BusinessObject.Model.staff> staff { get; set; }
 
         public async Task<IActionResult> OnGetAsync()
         {

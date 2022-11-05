@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace BusinessObject.Model
 {
@@ -13,8 +14,12 @@ namespace BusinessObject.Model
         }
 
         public int Id { get; set; }
+        [Required]
         public string Name { get; set; }
+        [Required]
+        [Range(5, 11, ErrorMessage = "Please enter valid integer Number")]
         public int Capacity { get; set; }
+        [Range(1, double.MaxValue, ErrorMessage = "Please enter valid doubleNumber")]
         public double Price { get; set; }
         public string Status { get; set; }
         public string Image { get; set; }

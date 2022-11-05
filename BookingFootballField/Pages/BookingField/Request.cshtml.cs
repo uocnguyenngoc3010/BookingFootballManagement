@@ -5,8 +5,6 @@ namespace BookingFootballField.Pages.BookingField
 {
     public class RequestModel : PageModel
     {
-        public void OnGet()
-        {
-        }
+       
     }
 }

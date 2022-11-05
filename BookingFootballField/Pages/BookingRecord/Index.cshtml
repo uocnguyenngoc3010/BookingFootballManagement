@@ -1,4 +1,52 @@
 ﻿@page
 @model BookingFootballField.Pages.BookingRecord.IndexModel
 @{
+    ViewData["Title"] = "Booking Records";
 }
+
+<div class="text-center">
+    <h1 class="display-4" style="padding-top:1rem;font-weight:700">Booking Records</h1>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>            
+            <th scope="col">@Html.DisplayNameFor(m => m.BookingRecords.FirstOrDefault().Id)</th>
+            <th scope="col">@Html.DisplayNameFor(m => m.BookingRecords.FirstOrDefault().BookingRequest.FieldId)</th>
+            <th scope="col">Customer</th>
+            <th scope="col">Staff</th>
+            <th scope="col">@Html.DisplayNameFor(m => m.BookingRecords.FirstOrDefault().BookingRequest.SendDate)</th>
+            <th scope="col">@Html.DisplayNameFor(m => m.BookingRecords.FirstOrDefault().BookingRequest.StartTime)</th>
+            <th scope="col">@Html.DisplayNameFor(m => m.BookingRecords.FirstOrDefault().BookingRequest.EndTime)</th> 
+            <th scope="col">@Html.DisplayNameFor(m => m.BookingRecords.FirstOrDefault().Status)</th> 
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            for (int i = 0; i < Model.BookingRecords.Count; i++)
+            {                
+                    <tr>                                                            
+                        <td>@Model.BookingRecords[i].Id</td>
+                        <td>@Model.BookingRecords[i].BookingRequest.FieldId</td>
+                        <td>ID @Model.BookingRecords[i].BookingRequest.CustomerId - @Model.BookingRecords[i].BookingRequest.Customer.Name</td>
+                        <td>ID @Model.BookingRecords[i].Staff.Id - @Model.BookingRecords[i].Staff.Name</td>
+                        <td>@Model.BookingRecords[i].BookingRequest.SendDate.ToString("dd/MM/yyyy HH:mm")</td>
+                        <td>@Model.BookingRecords[i].BookingRequest.StartTime.ToString("dd/MM/yyyy HH:mm")</td>
+                        <td>@Model.BookingRecords[i].BookingRequest.EndTime.ToString("dd/MM/yyyy HH:mm")</td>
+                        <td>
+                            @if(@Model.BookingRecords[i].Status.Equals("APPROVED"))
+                        {
+                                <button type="button" class="btn btn-success" name="ActionName" disabled>APPROVED</button>
+                        }
+                        else
+                        {
+                                <button type="button" class="btn btn-danger" name="ActionName" disabled>CANCELED</button>   
+                        }                        
+                        </td>                    
+                    </tr>
+            }            
+        }
+    </tbody>
+</table>
+
+

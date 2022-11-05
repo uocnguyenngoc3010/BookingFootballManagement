@@ -18,12 +18,12 @@ namespace BusinessObject.Model
         {
         }
 
-        public virtual DbSet<BlackList> BlackList { get; set; }
-        public virtual DbSet<BookingRecord> BookingRecord { get; set; }
-        public virtual DbSet<BookingRequest> BookingRequest { get; set; }
-        public virtual DbSet<Customer> Customer { get; set; }
-        public virtual DbSet<FootballField> FootballField { get; set; }
-        public virtual DbSet<Staff> Staff { get; set; }
+        public virtual DbSet<BlackList> BlackLists { get; set; }
+        public virtual DbSet<BookingRecord> BookingRecords { get; set; }
+        public virtual DbSet<BookingRequest> BookingRequests { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<FootballField> FootballFields { get; set; }
+        public virtual DbSet<staff> staff { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -62,7 +62,7 @@ namespace BusinessObject.Model
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__BookingRe__Booki__4316F928");
 
-                entity.HasOne(d => d.Staff)
+                entity.HasOne(d => d.staff)
                     .WithMany(p => p.BookingRecord)
                     .HasForeignKey(d => d.StaffId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
@@ -127,7 +127,7 @@ namespace BusinessObject.Model
                 entity.Property(e => e.Status).HasMaxLength(20);
             });
 
-            modelBuilder.Entity<Staff>(entity =>
+            modelBuilder.Entity<staff>(entity =>
             {
                 entity.HasIndex(e => e.Email, "UQ__Staff__A9D105346A7839AF")
                     .IsUnique();

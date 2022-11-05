@@ -30,7 +30,7 @@ namespace DataAccess
         {
             List<BlackList> blackLists;
             var _context = new FBookingDBContext();
-            blackLists = _context.BlackList.ToList();
+            blackLists = _context.BlackLists.ToList();
             return blackLists;
         }
 
@@ -38,7 +38,7 @@ namespace DataAccess
         {
             BlackList blackLists = null;
             var _context = new FBookingDBContext();
-            blackLists = _context.BlackList.FirstOrDefault(item => item.Id == id);
+            blackLists = _context.BlackLists.FirstOrDefault(item => item.Id == id);
             return blackLists;
         }
 
@@ -46,27 +46,27 @@ namespace DataAccess
         {
             BlackList blackLists = null;
             var _context = new FBookingDBContext();
-            blackLists = _context.BlackList.FirstOrDefault(item => item.CustomerId == id);
+            blackLists = _context.BlackLists.FirstOrDefault(item => item.CustomerId == id);
             return blackLists;
         }
 
         public void Add(BlackList blackLists)
         {
             var _context = new FBookingDBContext();
-            _context.BlackList.Add(blackLists);
+            _context.BlackLists.Add(blackLists);
             _context.SaveChanges();
         }
 
         public void Update(BlackList blackLists)
         {
             var _context = new FBookingDBContext();
-            _context.BlackList.Update(blackLists);
+            _context.BlackLists.Update(blackLists);
             _context.SaveChangesAsync();
         }
         public void Delete(BlackList blackLists)
         {
             var _context = new FBookingDBContext();
-            _context.BlackList.Remove(blackLists);
+            _context.BlackLists.Remove(blackLists);
             _context.SaveChangesAsync();
         }
     }

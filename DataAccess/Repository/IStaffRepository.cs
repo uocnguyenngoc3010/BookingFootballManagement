@@ -9,12 +9,12 @@ namespace DataAccess.Repository
 {
     public interface IStaffRepository
     {
-        IList<Staff> GetList();
-        Staff GetByID(int id);
-        Staff GetByEmail(string email);
-        void Add(Staff staff);
-        void Delete(Staff staff);
-        void Update(Staff staff);
+        IList<staff> GetList();
+        staff GetByID(int id);
+        staff GetByEmail(string email);
+        void Add(staff staff);
+        void Delete(staff staff);
+        void Update(staff staff);
         string GetName(int id);
     }
 }

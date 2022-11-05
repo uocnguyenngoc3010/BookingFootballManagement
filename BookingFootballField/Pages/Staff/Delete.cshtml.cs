@@ -22,7 +22,7 @@ namespace BookingFootballField.Pages.Staffs
         }
 
         [BindProperty]
-        public BusinessObject.Model.Staff staff { get; set; }
+        public BusinessObject.Model.staff staff { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -36,7 +36,7 @@ namespace BookingFootballField.Pages.Staffs
                 return NotFound();
             }
 
-            staff = await _context.Staff.FirstOrDefaultAsync(m => m.Id == id);
+            staff = await _context.staff.FirstOrDefaultAsync(m => m.Id == id);
 
             if (staff == null)
             {
@@ -52,7 +52,7 @@ namespace BookingFootballField.Pages.Staffs
                 return NotFound();
             }
 
-            staff = await _context.Staff.FindAsync(id);
+            staff = await _context.staff.FindAsync(id);
 
             if (staff != null)
             {

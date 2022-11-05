@@ -14,6 +14,6 @@ namespace BusinessObject.Model
         public string Note { get; set; }
 
         public virtual BookingRequest BookingRequest { get; set; }
-        public virtual Staff Staff { get; set; }
+        public virtual staff staff { get; set; }
     }
 }

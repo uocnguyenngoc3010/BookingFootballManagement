@@ -14,3 +14,19 @@ D:\C# code\BookingFootballManagement\BusinessObject\obj\Debug\net5.0\BusinessObj
 D:\C# code\BookingFootballManagement\BusinessObject\obj\Debug\net5.0\BusinessObject.genruntimeconfig.cache
 D:\C# code\BookingFootballManagement\BusinessObject\obj\Debug\net5.0\ref\BusinessObject.dll
 D:\C# code\BookingFootballManagement\BusinessObject\bin\Debug\net5.0\appsettings.json
+E:\PRN221\Football-Dai\BookingFootballManagement\BusinessObject\bin\Debug\net5.0\appsettings.json
+E:\PRN221\Football-Dai\BookingFootballManagement\BusinessObject\bin\Debug\net5.0\BusinessObject.deps.json
+E:\PRN221\Football-Dai\BookingFootballManagement\BusinessObject\bin\Debug\net5.0\BusinessObject.runtimeconfig.json
+E:\PRN221\Football-Dai\BookingFootballManagement\BusinessObject\bin\Debug\net5.0\BusinessObject.runtimeconfig.dev.json
+E:\PRN221\Football-Dai\BookingFootballManagement\BusinessObject\bin\Debug\net5.0\BusinessObject.dll
+E:\PRN221\Football-Dai\BookingFootballManagement\BusinessObject\bin\Debug\net5.0\BusinessObject.pdb
+E:\PRN221\Football-Dai\BookingFootballManagement\BusinessObject\obj\Debug\net5.0\BusinessObject.csproj.AssemblyReference.cache
+E:\PRN221\Football-Dai\BookingFootballManagement\BusinessObject\obj\Debug\net5.0\BusinessObject.GeneratedMSBuildEditorConfig.editorconfig
+E:\PRN221\Football-Dai\BookingFootballManagement\BusinessObject\obj\Debug\net5.0\BusinessObject.AssemblyInfoInputs.cache
+E:\PRN221\Football-Dai\BookingFootballManagement\BusinessObject\obj\Debug\net5.0\BusinessObject.AssemblyInfo.cs
+E:\PRN221\Football-Dai\BookingFootballManagement\BusinessObject\obj\Debug\net5.0\BusinessObject.csproj.CoreCompileInputs.cache
+E:\PRN221\Football-Dai\BookingFootballManagement\BusinessObject\obj\Debug\net5.0\BusinessObject.dll
+E:\PRN221\Football-Dai\BookingFootballManagement\BusinessObject\obj\Debug\net5.0\refint\BusinessObject.dll
+E:\PRN221\Football-Dai\BookingFootballManagement\BusinessObject\obj\Debug\net5.0\BusinessObject.pdb
+E:\PRN221\Football-Dai\BookingFootballManagement\BusinessObject\obj\Debug\net5.0\BusinessObject.genruntimeconfig.cache
+E:\PRN221\Football-Dai\BookingFootballManagement\BusinessObject\obj\Debug\net5.0\ref\BusinessObject.dll

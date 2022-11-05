@@ -27,54 +27,54 @@ namespace DataAccess
             }
         }
 
-        public IList<Staff> GetList()
+        public IList<staff> GetList()
         {
-            List<Staff> staffs;
+            List<staff> staffs;
             var _context = new FBookingDBContext();
-            staffs = _context.Staff.ToList();
+            staffs = _context.staff.ToList();
             return staffs;
         }
 
-        public Staff GetByID(int id)
+        public staff GetByID(int id)
         {
-            Staff staff = null;
+            staff staff = null;
             var _context = new FBookingDBContext();
-            staff = _context.Staff.FirstOrDefault(item => item.Id == id);
+            staff = _context.staff.FirstOrDefault(item => item.Id == id);
             return staff;
         }
 
-        public Staff GetByEmail(string email)
+        public staff GetByEmail(string email)
         {
-            Staff staff = null;
+            staff staff = null;
             var _context = new FBookingDBContext();
-            staff = _context.Staff.FirstOrDefault(item => item.Email == email);
+            staff = _context.staff.FirstOrDefault(item => item.Email == email);
             return staff;
         }
 
         public string GetName(int id)
         {
-            Staff staff = null;
+            staff staff = null;
             var _context = new FBookingDBContext();
-            staff = _context.Staff.FirstOrDefault(item => item.Id == id);
+            staff = _context.staff.FirstOrDefault(item => item.Id == id);
             return staff.Name;
         }
-        public void Add(Staff staff)
+        public void Add(staff staff)
         {
             var _context = new FBookingDBContext();
-            _context.Staff.Add(staff);
+            _context.staff.Add(staff);
             _context.SaveChangesAsync();
         }
 
-        public void Update(Staff staff)
+        public void Update(staff staff)
         {
             var _context = new FBookingDBContext();
-            _context.Staff.Update(staff);
+            _context.staff.Update(staff);
             _context.SaveChangesAsync();
         }
-        public void Delete(Staff staff)
+        public void Delete(staff staff)
         {
             var _context = new FBookingDBContext();
-            _context.Staff.Remove(staff);
+            _context.staff.Remove(staff);
             _context.SaveChangesAsync();
         }
     }

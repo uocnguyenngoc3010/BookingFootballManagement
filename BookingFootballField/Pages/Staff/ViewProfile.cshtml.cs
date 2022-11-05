@@ -20,7 +20,7 @@ namespace BookingFootballField.Pages.Staffs
             _staffRepository = new StaffRepository();
         }
 
-        public BusinessObject.Model.Staff staff { get; set; }
+        public BusinessObject.Model.staff staff { get; set; }
 
         public IActionResult OnGet()
         {

@@ -2,21 +2,29 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace BusinessObject.Model
 {
-    public partial class Staff
+    public partial class staff
     {
-        public Staff()
+        public staff()
         {
             BookingRecord = new HashSet<BookingRecord>();
         }
-
+        [Required]
         public int Id { get; set; }
+        [Required]
+        [EmailAddress]
         public string Email { get; set; }
+        [Required]
+        [StringLength(50, MinimumLength = 5, ErrorMessage = "The length of name is from 5 to 50 characters")]
         public string Password { get; set; }
         public string Name { get; set; }
+        [Required]
+        [Phone]
         public string PhoneNumber { get; set; }
+        [Required]
         public bool? IsActived { get; set; }
 
         public virtual ICollection<BookingRecord> BookingRecord { get; set; }

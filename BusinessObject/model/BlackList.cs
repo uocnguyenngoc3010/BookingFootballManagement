@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace BusinessObject.Model
 {
@@ -9,7 +10,10 @@ namespace BusinessObject.Model
     {
         public int Id { get; set; }
         public int CustomerId { get; set; }
+        [Required]
         public DateTime BanDate { get; set; }
+        [Required]
+        [MaxLength(100, ErrorMessage = "Reason cannot over 100 characters")]
         public string Reason { get; set; }
 
         public virtual Customer Customer { get; set; }

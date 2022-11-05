@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Threading.Tasks;
-using static BusinessObject.Model.Staff;
 namespace BookingFootballField.Pages.Staffs
 {
     public class CreateModel : PageModel
@@ -32,7 +31,7 @@ namespace BookingFootballField.Pages.Staffs
         }
 
         [BindProperty]
-        public BusinessObject.Model.Staff staff { get; set; }
+        public BusinessObject.Model.staff staff { get; set; }
         //name space trung voi ten class k goi duoc staff ra
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
