@@ -1,18 +1,21 @@
-using DataAccess.Repository;
-using Microsoft.AspNetCore.Http;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using System;
+using Microsoft.EntityFrameworkCore;
+using BusinessObject.Model;
+using DataAccess.Repository;
+using Microsoft.AspNetCore.Http;
 
-namespace BookingFootballField.Pages.Customer
+namespace BookingFieldManagement.Pages.Customer
 {
     public class IndexModel : PageModel
     {
         private readonly BusinessObject.Model.FBookingDBContext _context;
-        ICustomerRepository _customerRepository = null;
-        IStaffRepository _staffRepository = null;
+        ICustomerRepository _customerRepository=null;
+        IStaffRepository _staffRepository=null;
         public string customerId;
         public string staffId;
         public string isAdmin;
@@ -24,7 +27,7 @@ namespace BookingFootballField.Pages.Customer
             _staffRepository = new StaffRepository();
         }
 
-        public IList<BusinessObject.Model.Customer> Customer { get; set; }
+        public IList<BusinessObject.Model.Customer> Customer { get;set; }
 
         public async Task<IActionResult> OnGetAsync()
         {
