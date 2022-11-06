@@ -55,7 +55,7 @@ namespace BookingFootballField.Pages.BlackList
 
             Customer = customerRepository.GetByID((int)id);
 
-            ViewData["CustomerId"] = new SelectList(_context.Customer, "Id", "Email");
+            ViewData["CustomerId"] = new SelectList(_context.Customers, "Id", "Email");
             return Page();
         }
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD

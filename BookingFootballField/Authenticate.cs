@@ -22,11 +22,11 @@ namespace BookingFootballField
             return isAdmin;
         }
 
-        public Staff LoginByStaff(string email, string password)
+        public staff LoginByStaff(string email, string password)
         {
-            Staff staff = new Staff();
+            staff staff = new staff();
             var _context = new FBookingDBContext();
-            staff = _context.Staff.Where(c => c.Email.Equals(email) && c.Password.Equals(password)).SingleOrDefault();
+            staff = _context.staff.Where(c => c.Email.Equals(email) && c.Password.Equals(password)).SingleOrDefault();
             return staff;
         }
 
@@ -34,7 +34,7 @@ namespace BookingFootballField
         {
             Customer customer = new Customer();
             var _context = new FBookingDBContext();
-            customer = _context.Customer.Where(c => c.Email.Equals(email) && c.Password.Equals(password)).SingleOrDefault();
+            customer = _context.Customers.Where(c => c.Email.Equals(email) && c.Password.Equals(password)).SingleOrDefault();
             return customer;
         }
     }

@@ -48,7 +48,7 @@ namespace BookingFootballField.Pages.Customer
                 return NotFound();
             }
 
-            Customer = await _context.Customer.FirstOrDefaultAsync(m => m.Id == id);
+            Customer = await _context.Customers.FirstOrDefaultAsync(m => m.Id == id);
 
             if (Customer == null)
             {
@@ -64,7 +64,7 @@ namespace BookingFootballField.Pages.Customer
                 return NotFound();
             }
 
-            Customer = await _context.Customer.FindAsync(id);
+            Customer = await _context.Customers.FindAsync(id);
 
             if (Customer != null)
             {

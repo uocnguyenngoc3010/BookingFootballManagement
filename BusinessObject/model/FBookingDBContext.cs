@@ -28,7 +28,7 @@ namespace BusinessObject.Model
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("server =localhost; database = FBookingDB;uid=sa;pwd=123;");
+                optionsBuilder.UseSqlServer("server =localhost; database = FBookingDB;Trusted_Connection=True;");
             }
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)

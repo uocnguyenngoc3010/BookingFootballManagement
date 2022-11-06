@@ -30,7 +30,7 @@ namespace DataAccess
         {
             List<Customer> customers;
             var _context = new FBookingDBContext();
-            customers = _context.Customer.ToList();
+            customers = _context.Customers.ToList();
             return customers;
         }
 
@@ -38,7 +38,7 @@ namespace DataAccess
         {
             Customer customer = null;
             var _context = new FBookingDBContext();
-            customer = _context.Customer.FirstOrDefault(item => item.Id == id);
+            customer = _context.Customers.FirstOrDefault(item => item.Id == id);
             return customer;
         }
 
@@ -46,7 +46,7 @@ namespace DataAccess
         {
             Customer customer = null;
             var _context = new FBookingDBContext();
-            customer = _context.Customer.FirstOrDefault(item => item.Email == email);
+            customer = _context.Customers.FirstOrDefault(item => item.Email == email);
             return customer;
         }
 
@@ -54,27 +54,27 @@ namespace DataAccess
         {
             Customer customer = null;
             var _context = new FBookingDBContext();
-            customer = _context.Customer.FirstOrDefault(item => item.Id == id);
+            customer = _context.Customers.FirstOrDefault(item => item.Id == id);
             return customer.Name;
         }
 
         public void Add(Customer customer)
         {
             var _context = new FBookingDBContext();
-            _context.Customer.Add(customer);
+            _context.Customers.Add(customer);
             _context.SaveChangesAsync();
         }
 
         public void Update(Customer customer)
         {
             var _context = new FBookingDBContext();
-            _context.Customer.Update(customer);
+            _context.Customers.Update(customer);
             _context.SaveChanges();
         }
         public void Delete(Customer customer)
         {
             var _context = new FBookingDBContext();
-            _context.Customer.Remove(customer);
+            _context.Customers.Remove(customer);
             _context.SaveChangesAsync();
         }
     }
