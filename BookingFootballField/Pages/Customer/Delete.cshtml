@@ -1,5 +1,6 @@
 ﻿@page
-@model BookingFootballField.Pages.Customer.DeleteModel
+@model BookingFieldManagement.Pages.Customer.DeleteModel
+
 @{
     ViewData["Title"] = "Delete";
 }
@@ -49,7 +50,7 @@
             @Html.DisplayFor(model => model.Customer.Status)
         </dd>
     </dl>
-
+    
     <form method="post" style="margin-left:2rem;">
         <input type="hidden" asp-for="Customer.Id" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |

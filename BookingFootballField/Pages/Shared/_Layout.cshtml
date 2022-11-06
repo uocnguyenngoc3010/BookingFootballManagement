@@ -10,7 +10,7 @@
     <link
         href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
         rel="stylesheet">
-
+        
     <title>Football Field Management</title>
     <!--
 
@@ -42,93 +42,92 @@
              <div class="col-12">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
-                        <a asp-page="/Index" class="logo"><em> SFMS </em></a>
+                        <a asp-page="/Index" class="logo">Booking<em> Football Field</em></a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            @if (Model.customerId != null)
-                            {
-                                <li class="scroll-to-section"><a asp-page="/Index" class="active">Home</a></li>
-                                 <li class="scroll-to-section">
-                                    <a href="#features">Payment 
-                                    </a>
-                                </li>
-                                <li class="scroll-to-section"><a href="#contact-us">Contact</a></li>
-                                <div class="dropdown">
-                                        <button onclick="myFunction()" class="dropbtn circles">
-                                                <p class="dropdown_name">@Model.name</p>
-                                                <img src="~/img/avt.png" alt="">
-                                        </button>
-                                        <div id="myDropdown" class="dropdown-content show">
-                                            <a asp-page="/ViewProfile">View Information</a>
-                                            <a asp-page="/BookingField/Index">Book Now!</a>
-                                            <a asp-page="/BookingField/RequestHistory">My Request</a>
-                                            <a asp-page="/BookingField/RecordHistory">My Record</a>
-                                            <a asp-page="/Login" asp-page-handler="LogOut">Logout</a>
-                                        </div>
+                            @if (Model.customerId != null){
+                            <li class="scroll-to-section"><a asp-page="/Index" class="active">Home</a></li>
+                             <li class="scroll-to-section">
+                                <a href="#features">Thanh Toan 
+                                </a>
+                            </li>
+                            <li class="scroll-to-section"><a href="#contact-us">Contact</a></li>
+                            <div class="dropdown">
+                                    <button onclick="myFunction()" class="dropbtn circles">
+                                            <p class="dropdown_name">@Model.name</p>
+                                            <img src="~/img/avt.png" alt="">
+                                    </button>
+                                    <div id="myDropdown" class="dropdown-content show">
+                                        <a asp-page="/ViewProfile">View Information</a>
+                                        <a asp-page="/BookingField/Index">Book Now!</a>
+                                        <a asp-page="/BookingField/RequestHistory">My Request</a>
+                                        <a asp-page="/BookingField/RecordHistory">My Record</a>
+                                        <a asp-page="/Login" asp-page-handler="LogOut">Logout</a>
                                     </div>
-                            }
-                            else if (Model.isAdmin != null)
-                            {
-                                <li class="scroll-to-section"><a asp-page="/Index" class="active">Home</a></li>
-                                 <li class="scroll-to-section">
-                                    <a href="#features"> Payment
-                                    </a>
-                                </li>
-                                <li class="scroll-to-section"><a href="#contact-us">Contact</a></li>
-                                <!-- <li class=" avatarProfile"> -->
-                                    <div class="dropdown">
-                                        <button onclick="myFunction()" class="dropbtn circles">
-                                                <p class="dropdown_name">Admin</p>
-                                                <img src="~/img/avt.png" alt="">
-                                        </button>
-                                        <div id="myDropdown" class="dropdown-content show">
-                                            <a asp-page="/Customer/Index">Customer</a>
-                                            <a asp-page="/Staff/Index">Staff</a>
-                                            <a asp-page="/FootballField/Index">FootballField</a>
+                                </div>
+                        }
+                           else if (Model.isAdmin != null)
+                           {
+                            <li class="scroll-to-section"><a asp-page="/Index" class="active">Home</a></li>
+                             <li class="scroll-to-section">
+                                <a href="#features">Thanh Toan QR 
+                                </a>
+                            </li>
+                            <li class="scroll-to-section"><a href="#contact-us">Contact</a></li>
+                            <!-- <li class=" avatarProfile"> -->
+                                <div class="dropdown">
+                                    <button onclick="myFunction()" class="dropbtn circles">
+                                            <p class="dropdown_name">Admin</p>
+                                            <img src="~/img/avt.png" alt="">
+                                    </button>
+                                    <div id="myDropdown" class="dropdown-content show">
+                                        <a asp-page="/Customer/Index">Customer</a>
+                                        <a asp-page="/Staff/Index">Staff</a>
+                                        <a asp-page="/FootballField/Index">FootballField</a>
                                         @*<a asp-page="/BookingField/ResolveRequests">Resolve Requests</a>
                                         <a asp-page="/BookingRecord">Booking Records</a>*@
-                                            <a asp-page="/Login" asp-page-handler="LogOut">Logout</a>
-                                        </div>
+                                        <a asp-page="/Login" asp-page-handler="LogOut">Logout</a>
                                     </div>
+                                </div>
                             }
                             else if (Model.staffId != null)
                             {
-                                    <li class="scroll-to-section"><a asp-page="/Index">Home</a></li>
-                                     <li class="scroll-to-section">
-                                        <a href="#features"> Payment
-
-                                        </a>
-                                    </li>
-                                    <li class="scroll-to-section"><a href="#contact-us">Contact</a></li>
-                                <!-- <li class=" avatarProfile"> -->
-                                    <div class="dropdown">
-                                        <button onclick="myFunction()" class="dropbtn circles">
-                                                <p class="dropdown_name">@Model.name</p>
-                                                <img src="~/img/avt.png" alt="">
-                                        </button>
-                                        <div id="myDropdown" class="dropdown-content show">                                        
-                                            <a asp-page="/FootballField/Index">FootballField</a>
-                                            <a asp-page="/BookingField/ResolveRequests">Resolve Requests</a>
-                                            <a asp-page="/BookingRecord/Index">Booking Records</a>
-                                            <a asp-page="/Staff/ViewProfile">ViewProfile</a>
-                                            <a asp-page="/Blacklist/Index">Blacklist</a>
-                                            <a asp-page="/Login" asp-page-handler="LogOut">Logout</a>
-                                        </div>
-                                    </div>
-                            }
-                            else
-                            {
-                                <li class="scroll-to-section"><a asp-page="/Index" class="active">Home</a></li>
+                                <li class="scroll-to-section"><a asp-page="/Index">Home</a></li>
                                  <li class="scroll-to-section">
-                                    <a href="#features">Payment
-
+                                    <a href="#features"> Thanh Toan QR
+                                       
                                     </a>
                                 </li>
                                 <li class="scroll-to-section"><a href="#contact-us">Contact</a></li>
-                                <div class="SignIn_div">
-                                    <li class="scroll-to-section" style="margin-top:6px;"><a asp-page="/Login">Sign in</a></li>
+                            <!-- <li class=" avatarProfile"> -->
+                                <div class="dropdown">
+                                    <button onclick="myFunction()" class="dropbtn circles">
+                                            <p class="dropdown_name">@Model.name</p>
+                                            <img src="~/img/avt.png" alt="">
+                                    </button>
+                                    <div id="myDropdown" class="dropdown-content show">                                        
+                                        <a asp-page="/FootballField/Index">FootballField</a>
+                                        <a asp-page="/BookingField/ResolveRequests">Resolve Requests</a>
+                                        <a asp-page="/BookingRecord/Index">Booking Records</a>
+                                        <a asp-page="/Staff/ViewProfile">ViewProfile</a>
+                                        <a asp-page="/Blacklist/Index">Blacklist</a>
+                                        <a asp-page="/Login" asp-page-handler="LogOut">Logout</a>
+                                    </div>
                                 </div>
+                            }
+                            else
+                            {
+                            <li class="scroll-to-section"><a asp-page="/Index" class="active">Home</a></li>
+                             <li class="scroll-to-section">
+                                <a href="#features">Thanh Toan QR 
+                                   
+                                </a>
+                            </li>
+                            <li class="scroll-to-section"><a href="#contact-us">Contact</a></li>
+                            <div class="SignIn_div">
+                                <li class="scroll-to-section" style="margin-top:6px;"><a asp-page="/Login">Sign in</a></li>
+                            </div>
                             }
                         </ul>
                         <a class='menu-trigger'>
@@ -141,7 +140,7 @@
    </div>
 </header>
         <main role="main" class="pb-3" style="margin-top:4rem;">
-        @RenderBody()   
+            @RenderBody()   
         </main>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
@@ -152,7 +151,7 @@
 
      <!-- jQuery -->
     <script src="~/js/jquery-2.1.0.min.js"></script>
-
+    
     <!-- Bootstrap -->
     <script src="~/js/popper.js"></script>
     @*<script src="~/js/bootstrap.min.js"></script>*@
@@ -172,7 +171,7 @@
         function myFunction() {
           document.getElementById("myDropdown").classList.toggle("show");
         }
-
+        
         // Close the dropdown if the user clicks outside of it
         window.onclick = function(event) {
           if (!event.target.matches('.dropbtn')) {
@@ -190,7 +189,7 @@
 
     <!-- jQuery -->
     <script src="~/js/jquery-2.1.0.min.js"></script>
-
+    
     <!-- Bootstrap -->
     <script src="~/js/popper.js"></script>
     <script src="~/js/bootstrap.min.js"></script>
@@ -209,5 +208,3 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>    
-
-

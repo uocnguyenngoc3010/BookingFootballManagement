@@ -186,11 +186,12 @@ header
     display: flex;
     justify-content: flex-end;
 }
-.avatarProfile p {
-    font-weight: 700;
-    font-size: 15px;
-    margin-top: 7px;
-}
+
+    .avatarProfile p {
+        font-weight: 700;
+        font-size: 15px;
+        margin-top: 7px;
+    }
 
 .background-header {
     background: rgba(250,250,250,0.99) !important;
@@ -206,10 +207,11 @@ header
 .SignIn_div {
     background-color: #1e1e1e;
 }
-.SignIn_div:hover {
+
+    .SignIn_div:hover {
         background-color: #33d9b2;
         color: #000;
-}
+    }
 /***********************************Sign IN**********************/
 /* 
 ---------------------------------------------
@@ -288,26 +290,26 @@ header
 }
 
 /* ///////////////////Xổ thông tin ///////////////////////////////////*/
-    .background-header .logo,
-    .background-header .main-nav .nav li a {
-        color: #232d39 !important;
-    }
+.background-header .logo,
+.background-header .main-nav .nav li a {
+    color: #232d39 !important;
+}
 
-    .background-header .main-nav .nav li:last-child a {
+.background-header .main-nav .nav li:last-child a {
+    color: #fff !important;
+}
+
+    .background-header .main-nav .nav li:last-child a:hover {
         color: #fff !important;
     }
 
-        .background-header .main-nav .nav li:last-child a:hover {
-            color: #fff !important;
-        }
+.background-header .main-nav .nav li:hover a {
+    color: #ed563b !important;
+}
 
-    .background-header .main-nav .nav li:hover a {
-        color: #ed563b !important;
-    }
-
-    .background-header .nav li a.active {
-        color: #ed563b !important;
-    }
+.background-header .nav li a.active {
+    color: #ed563b !important;
+}
 
 .header-area {
     position: absolute;
@@ -343,7 +345,7 @@ header
 
             .header-area .main-nav .logo em {
                 font-style: normal;
-                color: #1dd1a1;
+                color: #ed563b;
                 font-weight: 900;
             }
 
@@ -1071,7 +1073,7 @@ schedule
 }
 
 .AddNewTime {
-    margin-left:8.333333px;
+    margin-left: 8.333333px;
 }
 
 .noteAdd .noteAddNote input {
@@ -1161,7 +1163,7 @@ trainers
             }
 
 .bookingNow a {
-    width:350px;
+    width: 350px;
     margin: 2rem 25rem;
 }
 /* 
@@ -1254,7 +1256,7 @@ contact
     position: absolute;
     height: 450px;
     width: 700px;
-    margin:0 3rem;
+    margin: 0 3rem;
 }
 
 .down-content {

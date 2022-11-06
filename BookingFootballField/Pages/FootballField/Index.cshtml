@@ -1,4 +1,59 @@
 ﻿@page
-@model BookingFootballField.Pages.FootballField.IndexModel
+@using DataAccess.Repository
+@model BookingFieldManagement.Pages.FootballField.IndexModel
+
 @{
+    ViewData["Title"] = "Index";
 }
+
+<h1 style="padding-top:1rem;">Football Field</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+@{
+    IFootballFieldRepository footballFieldRepository = new FootballFieldRepository();
+    IList<BusinessObject.Model.FootballField> footballField = footballFieldRepository.GetList();
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FootballField[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FootballField[0].Capacity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FootballField[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FootballField[0].Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in footballField) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Capacity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

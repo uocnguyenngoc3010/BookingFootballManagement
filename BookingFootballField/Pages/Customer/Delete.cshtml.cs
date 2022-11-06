@@ -1,18 +1,21 @@
-using DataAccess.Repository;
-using Microsoft.AspNetCore.Http;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.Threading.Tasks;
-using System;
 using Microsoft.EntityFrameworkCore;
+using BusinessObject.Model;
+using DataAccess.Repository;
+using Microsoft.AspNetCore.Http;
 
-namespace BookingFootballField.Pages.Customer
+namespace BookingFieldManagement.Pages.Customer
 {
     public class DeleteModel : PageModel
     {
         private readonly BusinessObject.Model.FBookingDBContext _context;
-        ICustomerRepository customerRepository = null;
-        IStaffRepository staffRepository = null;
+        ICustomerRepository customerRepository=null;
+        IStaffRepository staffRepository=null;
         public string customerId;
         public string staffId;
         public string isAdmin;
@@ -42,7 +45,7 @@ namespace BookingFootballField.Pages.Customer
             {
                 return RedirectToPage("/Index");
             }
-            
+            return Page();
             if (id == null)
             {
                 return NotFound();

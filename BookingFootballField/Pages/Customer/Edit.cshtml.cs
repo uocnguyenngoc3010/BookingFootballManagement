@@ -1,19 +1,22 @@
-using DataAccess.Repository;
-using Microsoft.AspNetCore.Http;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using System.Threading.Tasks;
-using System;
-using System.Linq;
+using BusinessObject.Model;
+using DataAccess.Repository;
+using Microsoft.AspNetCore.Http;
 
-namespace BookingFootballField.Pages.Customer
+namespace BookingFieldManagement.Pages.Customer
 {
     public class EditModel : PageModel
     {
         private readonly BusinessObject.Model.FBookingDBContext _context;
-        ICustomerRepository customerRepository = null;
-        IStaffRepository staffRepository = null;
+        ICustomerRepository customerRepository=null;
+        IStaffRepository staffRepository=null;
         public string customerId;
         public string staffId;
         public string isAdmin;
@@ -30,7 +33,7 @@ namespace BookingFootballField.Pages.Customer
         public BusinessObject.Model.Customer Customer { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
-        {
+        {                       
             isAdmin = HttpContext.Session.GetString("isAdmin");
             customerId = HttpContext.Session.GetString("CustomerId");
             if (customerId != null)
@@ -51,10 +54,10 @@ namespace BookingFootballField.Pages.Customer
             if (Customer == null)
             {
                 return NotFound();
-            }
+            } 
             else
             {
-                if (customerId != null && Customer.Id != int.Parse(customerId))
+                if (customerId != null && Customer.Id != int.Parse(customerId))                
                 {
                     return RedirectToPage("/Index");
                 }

@@ -1,17 +1,21 @@
-using DataAccess.Repository;
-using Microsoft.AspNetCore.Http;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.Threading.Tasks;
-using System;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using BusinessObject.Model;
+using DataAccess.Repository;
+using Microsoft.AspNetCore.Http;
 
-namespace BookingFootballField.Pages.Customer
+namespace BookingFieldManagement.Pages.Customer
 {
     public class CreateModel : PageModel
     {
         private readonly BusinessObject.Model.FBookingDBContext _context;
-        ICustomerRepository _customerRepository = null;
-        IStaffRepository _staffRepository = null;
+        ICustomerRepository _customerRepository=null;      
+        IStaffRepository _staffRepository=null;
         public string customerId;
         public string staffId;
         public string isAdmin;
@@ -52,8 +56,8 @@ namespace BookingFootballField.Pages.Customer
             {
                 return Page();
             }
-
-            Customer.Status = true;
+	    
+	        Customer.Status = true;
             _customerRepository.Add(Customer);
 
             return RedirectToPage("./Index");
