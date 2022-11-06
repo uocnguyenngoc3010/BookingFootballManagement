@@ -1,4 +1,52 @@
 ﻿@page
-@model BookingFootballField.Pages.FootballField.EditModel
+@model BookingFieldManagement.Pages.FootballField.EditModel
+
 @{
+    ViewData["Title"] = "Edit";
+}
+
+<h1 style="justify-content: center;
+    padding-top: 1rem;
+    display: flex;
+    font-weight: 700;"> FootballField Edit</h1>
+<hr />
+<div class="row" style="display: flex;justify-content: center;margin: 0 15px;">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="FootballField.Id" />
+            <div class="form-group">
+                <label asp-for="FootballField.Name" class="control-label"></label>
+                <input asp-for="FootballField.Name" class="form-control" />
+                <span asp-validation-for="FootballField.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FootballField.Capacity" class="control-label"></label>
+                <input asp-for="FootballField.Capacity" class="form-control" />
+                <span asp-validation-for="FootballField.Capacity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FootballField.Price" class="control-label"></label>
+                <input asp-for="FootballField.Price" class="form-control" />
+                <span asp-validation-for="FootballField.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FootballField.Status" class="control-label"></label>
+                <input asp-for="FootballField.Status" class="form-control" />
+                <span asp-validation-for="FootballField.Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <div>
+                    <a asp-page="./Index">Back to List</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
