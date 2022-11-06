@@ -9,22 +9,30 @@ using Microsoft.EntityFrameworkCore;
 using BusinessObject.Model;
 using DataAccess.Repository;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Hosting;
+using System.IO;
 
 namespace BookingFieldManagement.Pages.FootballField
 {
     public class EditModel : PageModel
     {
+        private readonly IWebHostEnvironment webHostEnvironment;
         private readonly BusinessObject.Model.FBookingDBContext _context;
         IFootballFieldRepository footballFieldRepository = new FootballFieldRepository();
         IStaffRepository staffRepository = new StaffRepository();
         public string name;
-        public EditModel(BusinessObject.Model.FBookingDBContext context)
+        public EditModel(BusinessObject.Model.FBookingDBContext context, IWebHostEnvironment webHostEnvironment)
         {
             _context = context;
+            this.webHostEnvironment = webHostEnvironment;
         }
         public string staffId;
         public string isAdmin;
         public string customerId;
+        [BindProperty]
+        public IFormFile FileUpload { get; set; }
+        [BindProperty]
+        public string Imgpath { get; set; }
         [BindProperty]
         public BusinessObject.Model.FootballField FootballField { get; set; }
 
@@ -37,7 +45,7 @@ namespace BookingFieldManagement.Pages.FootballField
             {
                 return RedirectToPage("/Index");
             }
-            
+
             if (staffId != null)
             {
                 name = staffRepository.GetName(Int32.Parse(staffId));
@@ -70,6 +78,16 @@ namespace BookingFieldManagement.Pages.FootballField
             try
             {
                 //await _context.SaveChangesAsync();
+
+                var file = Path.Combine(webHostEnvironment.WebRootPath, @"image", FileUpload.FileName);
+                using (var fileStream = new FileStream(file, FileMode.Create))
+                {
+                    FileUpload.CopyTo(fileStream);
+                    Imgpath = @"\image\" + FileUpload.FileName;
+
+
+                }
+                FootballField.Image = Imgpath;
                 footballFieldRepository.Update(FootballField);
             }
             catch (DbUpdateConcurrencyException)
@@ -98,7 +116,7 @@ namespace BookingFieldManagement.Pages.FootballField
             {
                 return false;
             }
-            
+
         }
     }
 }

@@ -8,11 +8,13 @@
 <h1 style="justify-content: center;
     padding-top: 1rem;
     display: flex;
-    font-weight: 700;"> FootballField Edit</h1>
+    font-weight: 700;">
+    FootballField Edit
+</h1>
 <hr />
 <div class="row" style="display: flex;justify-content: center;margin: 0 15px;">
     <div class="col-md-4">
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="FootballField.Id" />
             <div class="form-group">
@@ -35,6 +37,12 @@
                 <input asp-for="FootballField.Status" class="form-control" />
                 <span asp-validation-for="FootballField.Status" class="text-danger"></span>
             </div>
+
+
+            <div class="mb-3">
+                <input type="file" asp-for="@Model.FileUpload" class="form-control" />
+            </div>
+
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
                 <div>
@@ -48,5 +56,7 @@
 
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
