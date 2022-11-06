@@ -1,5 +1,6 @@
 ﻿using BusinessObject.model;
 using BusinessObject.Model;
+using System;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
@@ -32,10 +33,17 @@ namespace BookingFootballField
 
         public Customer LoginByCustomer(string email, string password)
         {
-            Customer customer = new Customer();
-            var _context = new FBookingDBContext();
-            customer = _context.Customers.Where(c => c.Email.Equals(email) && c.Password.Equals(password)).SingleOrDefault();
-            return customer;
+            try
+            {
+                Customer customer = new Customer();
+                var _context = new FBookingDBContext();
+                customer = _context.Customers.Where(c => c.Email.Equals(email) && c.Password.Equals(password)).SingleOrDefault();
+                return customer;
+            } catch (Exception ex)
+            {
+                return null;
+            }
+            
         }
     }
 }
