@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace BusinessObject.Model
 {
@@ -10,6 +11,7 @@ namespace BusinessObject.Model
         public int Id { get; set; }
         public int BookingRequestId { get; set; }
         public int StaffId { get; set; }
+        [Required]
         public string Status { get; set; }
         public string Note { get; set; }
 

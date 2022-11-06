@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace BusinessObject.Model
 {
@@ -15,9 +16,13 @@ namespace BusinessObject.Model
         public int Id { get; set; }
         public int FieldId { get; set; }
         public int CustomerId { get; set; }
+        [Required]
         public DateTime SendDate { get; set; }
+        [Required]
         public DateTime StartTime { get; set; }
+        [Required]
         public DateTime EndTime { get; set; }
+        [Required]
         public string Status { get; set; }
 
         public virtual Customer Customer { get; set; }

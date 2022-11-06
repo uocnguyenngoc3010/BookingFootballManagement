@@ -1,4 +1,178 @@
 ﻿@page
 @model BookingFootballField.Pages.BookingField.RequestHistoryModel
+
+
 @{
+    int count = 0;
 }
+
+<div class="text-center">
+    <h1 class="display-4" style="font-weight: 700;
+    padding-top: 1rem;">Customer Requests</h1>
+</div>
+
+<div class="container col-12 border">
+    <div class="text-center col-8 mx-auto border">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pending-tab" data-bs-toggle="tab" data-bs-target="#pendingreqs" type="button" role="tab" aria-controls="pending" aria-selected="true">PENDING</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="resolved-tab" data-bs-toggle="tab" data-bs-target="#resolvedreqs" type="button" role="tab" aria-controls="resolved" aria-selected="false">RESOLVED</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="all-tab" data-bs-toggle="tab" data-bs-target="#allreqs" type="button" role="tab" aria-controls="all" aria-selected="false">ALL</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <!-- PENDING REQUESTS-->
+            <div class="tab-pane fade show active" id="pendingreqs" role="tabpanel" aria-labelledby="pending-tab">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">@Html.DisplayNameFor(m => m.PendingRequests.FirstOrDefault().Id)</th>
+                            <th scope="col">Field</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">@Html.DisplayNameFor(m => m.PendingRequests.FirstOrDefault().SendDate)</th>
+                            <th scope="col">@Html.DisplayNameFor(m => m.PendingRequests.FirstOrDefault().StartTime)</th>
+                            <th scope="col">@Html.DisplayNameFor(m => m.PendingRequests.FirstOrDefault().EndTime)</th>
+                            <th scope="col">Cancel Request</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            for (int i = 0; i < Model.PendingRequests.Count; i++)
+                            {
+                                count++;
+                                <tr>
+                                    <form method="POST">
+                                        <input type="hidden" id="requestId" name="RequestId" value="@Model.PendingRequests[i].Id">
+                                        <th scope="row">@count</th>
+                                        <td>@Model.PendingRequests[i].Id</td>
+                                        <td>@Model.PendingRequests[i].Field.Name</td>
+                                        <td>@Model.PendingRequests[i].Field.Price</td>
+                                        <td>@Model.PendingRequests[i].SendDate</td>
+                                        <td>@Model.PendingRequests[i].StartTime</td>
+                                        <td>@Model.PendingRequests[i].EndTime</td>
+                                        <td><button type="submit" class="btn btn-danger">Cancel</button></td>
+                                    </form>
+                                </tr>
+                            }
+                            count = 0;
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- RESOLVED REQUESTS-->
+            <div class="tab-pane fade" id="resolvedreqs" role="tabpanel" aria-labelledby="resolved-tab">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">@Html.DisplayNameFor(m => m.ResolvedRequests.FirstOrDefault().Id)</th>
+                            <th scope="col">Field</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">@Html.DisplayNameFor(m => m.ResolvedRequests.FirstOrDefault().SendDate)</th>
+                            <th scope="col">@Html.DisplayNameFor(m => m.ResolvedRequests.FirstOrDefault().StartTime)</th>
+                            <th scope="col">@Html.DisplayNameFor(m => m.ResolvedRequests.FirstOrDefault().EndTime)</th>
+                            <th scope="col">@Html.DisplayNameFor(m => m.ResolvedRequests.FirstOrDefault().Status)</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            for (int i = 0; i < Model.ResolvedRequests.Count; i++)
+                            {
+                                count++;
+                                string status = Model.ResolvedRequests[i].Status;
+                                <tr>
+                                    <th scope="row">@count</th>
+                                    <td>@Model.ResolvedRequests[i].Id</td>
+                                    <td>@Model.ResolvedRequests[i].Field.Name</td>
+                                    <td>@Model.ResolvedRequests[i].Field.Price</td>
+                                    <td>@Model.ResolvedRequests[i].SendDate.ToString("dd/MM/yyyy HH:mm")</td>
+                                    <td>@Model.ResolvedRequests[i].StartTime.ToString("dd/MM/yyyy HH:mm")</td>
+                                    <td>@Model.ResolvedRequests[i].EndTime.ToString("dd/MM/yyyy HH:mm")</td>
+                                    @if (status.Equals("APPROVED"))
+                                    {
+                                        <td><button type="button" class="btn btn-success" disabled>APPROVED</button></td>
+                                    }
+
+                                    @if (status.Equals("DECLINED"))
+                                    {
+                                        <td><button type="button" class="btn btn-danger" disabled>DECLINED</button></td>
+                                    }
+                                    
+                                    @if (Model.CancelableApprovedRequests[i])
+                                    {
+                                        <form method="POST" asp-page-handler="CancelApprovedRequest">
+                                            <input type="hidden" id="requestId" name="RequestId" value="@Model.ResolvedRequests[i].Id">
+                                            <td><button type="submit" class="btn btn-danger">CANCEL REQUEST</button></td>
+                                        </form>
+                                    }                                    
+                                </tr>
+                            }
+                            count = 0;
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <!-- ALL REQUESTS-->
+            <div class="tab-pane fade" id="allreqs" role="tabpanel" aria-labelledby="all-tab">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">@Html.DisplayNameFor(m => m.AllRequests.FirstOrDefault().Id)</th>
+                            <th scope="col">Field</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">@Html.DisplayNameFor(m => m.AllRequests.FirstOrDefault().SendDate)</th>
+                            <th scope="col">@Html.DisplayNameFor(m => m.AllRequests.FirstOrDefault().StartTime)</th>
+                            <th scope="col">@Html.DisplayNameFor(m => m.AllRequests.FirstOrDefault().EndTime)</th>
+                            <th scope="col">@Html.DisplayNameFor(m => m.AllRequests.FirstOrDefault().Status)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            for (int i = 0; i < Model.AllRequests.Count; i++)
+                            {
+                                count++;
+                                string status = Model.AllRequests[i].Status;
+
+                                <tr>
+                                    <th scope="row">@count</th>
+                                    <td>@Model.AllRequests[i].Id</td>
+                                    <td>@Model.AllRequests[i].Field.Name</td>
+                                    <td>@Model.AllRequests[i].Field.Price</td>
+                                    <td>@Model.AllRequests[i].SendDate.ToString("dd/MM/yyyy HH:mm")</td>
+                                    <td>@Model.AllRequests[i].StartTime.ToString("dd/MM/yyyy HH:mm")</td>
+                                    <td>@Model.AllRequests[i].EndTime.ToString("dd/MM/yyyy HH:mm")</td>
+
+                                    @if (status.Equals("PENDING"))
+                                    {
+                                        <td><button type="button" class="btn btn-warning" disabled>PENDING</button></td>
+                                    }
+                                    @if (status.Equals("APPROVED"))
+                                    {
+                                        <td><button type="button" class="btn btn-success" disabled>APPROVED</button></td>
+                                    }
+                                    @if (status.Equals("DECLINED"))
+                                    {
+                                        <td><button type="button" class="btn btn-danger" disabled>DECLINED</button></td>
+                                    }
+                                    @if (status.Equals("CANCELED"))
+                                    {
+                                        <td><button type="button" class="btn btn-danger" disabled>CANCELED</button></td>
+                                    }
+                                </tr>
+                            }
+                            count = 0;
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

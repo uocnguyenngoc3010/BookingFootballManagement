@@ -1,4 +1,276 @@
 ﻿@page
 @model BookingFootballField.Pages.BookingField.RequestModel
+
 @{
+    ViewData["Title"] = "Book Field Request";
+    
+    var currField = Model.CurrField;
+    int numOfSlots = Model.NumOfSlots;
+    int shownWeeks = Model.ShownWeeks;
+    int slotsPerDay = Model.SlotsPerDay;
+    Dictionary<int, string> timeSlots = Model.TimeSlots;
+
+    DateTime date = Model.CurrDate;
+    int num = 0;
 }
+
+<h1 style="
+    margin-top: 7rem;
+    display: flex;
+    justify-content: center;
+    font-weight: 600;">
+    @currField.Name - Price: @currField.Price
+</h1>
+
+<ul style="list-style:none;display:flex;margin-bottom=125px" class="nav nav-tabs" role="tablist">
+    <li class="nav-item" role="presentation">
+        <button style="border-radius: 10px;
+                        font-weight: 700;
+                        background-color: #3742fa;
+                        width: 100px;
+                        margin-right: 20px;
+                        height: 45px;
+                    color: #ffff;" 
+    class="nav-link active" id="week1-tab" data-bs-toggle="tab" data-bs-target="#week1-content" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">WEEK 1</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button style="border-radius: 10px;
+                        font-weight: 700;
+                        background-color: #3742fa;
+                         width: 100px;
+                         margin-right: 20px;
+                         height: 45px;
+                         color: #ffff;"  
+        class="nav-link" id="week2-tab" data-bs-toggle="tab" data-bs-target="#week2-content" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">WEEK 2</button>
+    </li>    
+</ul>
+<style type="text/css">
+    table, th, td{
+        border:1px solid black;
+    }
+    table{
+        margin:20px 0;
+        border-collapse:collapse;
+        width:100%;
+    }
+    thead{
+            height:50px;
+            background-color:skyblue;
+        }
+</style>
+
+<form method="POST">
+    <input type="hidden" name="CurrFieldId" value="@currField.Id" />
+
+    <div class="tab-content">
+
+        <!-- WEEK 1 -->
+        <div id="week1-content" class="tab-pane fade show active" role="tabpanel" aria-labelledby="week1-tab" tabindex="0">
+            <table class="table text-center" style="border:1px solid black">
+                <thead style="text-align:center">
+                    <tr>
+                        <th scope="col">#</th>
+                        @{                            
+                            // Will only display 7 days each tab / Week 1
+                            for (int i = 0; i < 7; i++)
+                            {
+                                         <th>
+                                           @(date.DayOfWeek), @(date.Day)/@(date.Month)
+                                        </th>
+
+                                date = date.AddDays(1);                                
+                            }
+                        }
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        // numOfSlots = shownWeeks (2 weeks or 14 days) * slotsPerDay (12)
+                        // Iterate (12) times based on number of slots a day has
+                        for (int i = 0; i < slotsPerDay; i++)
+                        {
+                            num = i + 1;
+
+                                       <tr>
+                                                <th scope="row">
+                                                        Slot @num
+                                                      @timeSlots[num]
+                                                </th>
+
+                                            <!-- 7 days a week -->
+                                            @for (int j = 0; j < 7; j++)
+                                {
+                                    // First Week no offset
+                                    num = j * slotsPerDay + 7 * slotsPerDay * 0 + i;
+
+                                    bool availableForBooking = true;
+
+                                            @foreach (var s in Model.UnavailableSlots)
+                                    {
+                                        if (s == num)
+                                        {
+                                            availableForBooking = false;
+                                            /*sân đã có người đặt .......màu xám trên table*/
+                                                    <td class="bg-secondary" style="background:#8395a7">
+                                                        @*Unavailable!*@
+                                                    </td>
+                                        }
+                                    }
+
+                                                @foreach (var s in Model.CurrCustomerBookedSlots)
+                                    {
+                                        if (s == num && availableForBooking)
+                                        {
+                                            availableForBooking = false;
+                                                       <td class="bg-success" >
+                                                           Already Booked By You!
+                                                       </td>
+                                        }
+                                    }
+                                    
+                                            @foreach (var s in Model.CurrCustomerPendingSlots)
+                                    {
+                                        if (s == num && availableForBooking)
+                                        {
+                                            availableForBooking = false;
+                                                        <td class="bg-warning" style="background-color:#d63031">
+                                                            Pending Approved
+                                                        </td>
+                                        }
+                                    }                                    
+
+                                             @foreach (var s in Model.ApprovedSlots)
+                                    {
+                                        if (s == num && availableForBooking)
+                                        {
+                                            availableForBooking = false;
+                                                                                        <td class="bg-danger">
+                                                                                            Booked!
+                                                                                        </td>
+                                        }
+                                    }                                    
+
+                                                                                @if (availableForBooking)
+                                    {
+                                                                                    <td>                                            
+                                                                                        <input type="checkbox" value="@num" name="ChosenSlots" />
+                                                                                    </td>
+                                    }
+                                }
+                                                                        </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <!-- WEEK 2 -->
+        <div id="week2-content" class="tab-pane fade" role="tabpanel" aria-labelledby="week1-tab" tabindex="0">
+            <table class="table text-center">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        @{
+                            // Will only display 7 days each tab / Week 2
+                            for (int i = 0; i < 7; i++)
+                            {
+                                                                            <th>
+                                                                                @(date.DayOfWeek), @(date.Day)/@(date.Month)
+                                                                            </th>
+
+                                date = date.AddDays(1);                                
+                            }
+                        }
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        // numOfSlots = shownWeeks (2 weeks or 14 days) * slotsPerDay (12)
+                        // Iterate (12) times based on number of slots a day has
+                        for (int i = 0; i < slotsPerDay; i++)
+                        {
+                            num = i + 1;
+
+                                                                        <tr>
+                                                                            <th scope="row">
+                                                                                Slot @num
+                                                                                @timeSlots[num]
+                                                                            </th>
+
+                                                                            <!-- 7 days a week -->
+                                                                            @for (int j = 0; j < 7; j++)
+                                {
+                                    // Second Week + 7 * 12 * 1 slots
+                                    num = j * slotsPerDay + 7 * slotsPerDay * 1 + i;
+
+                                    bool availableForBooking = true;
+
+                                                                                @foreach (var s in Model.UnavailableSlots)
+                                    {
+                                        if (s == num)
+                                        {
+                                            availableForBooking = false;
+                                                                                        <td class="bg-secondary">
+                                                                                            Unavailable!
+                                                                                        </td>
+                                        }
+                                    }
+
+                                                                                @foreach (var s in Model.CurrCustomerBookedSlots)
+                                    {
+                                        if (s == num && availableForBooking)
+                                        {
+                                            availableForBooking = false;
+                                                                                        <td class="bg-success">
+                                                                                            Already Booked By You!
+                                                                                        </td>
+                                        }
+                                    }
+                                    
+                                                                                @foreach (var s in Model.CurrCustomerPendingSlots)
+                                    {
+                                        if (s == num && availableForBooking)
+                                        {
+                                            availableForBooking = false;
+                                                                                        <td class="bg-warning" style="background-color:#d63031">
+                                                                                            Pending Approved
+                                                                                        </td>
+                                        }
+                                    }                                    
+
+                                                                                @foreach (var s in Model.ApprovedSlots)
+                                    {
+                                        if (s == num && availableForBooking)
+                                        {
+                                            availableForBooking = false;
+                                                                                        <td class="bg-danger">
+                                                                                            Booked!
+                                                                                        </td>
+                                        }
+                                    }
+
+                                                                                @if (availableForBooking)
+                                    {
+                                                                                    <td>                                        
+                                                                                        <input type="checkbox" value="@num" name="ChosenSlots" />
+                                                                                    </td>
+                                    }
+                                }
+                                                                        </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>        
+    </div>
+
+    <input style="margin-left: 50rem;
+    width: 90px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    font-weight: 700;
+    border-radius: 10px;" 
+    type="submit" value="Submit" />
+
+</form>
