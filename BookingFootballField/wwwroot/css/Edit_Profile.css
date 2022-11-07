@@ -1,0 +1,57 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f7f7ff;
+    margin-top: 20px;
+}
+
+.update {
+    padding-left:10.5rem;
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    border: 0 solid transparent;
+    border-radius: .25rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 6px 0 rgb(218 218 253 / 65%), 0 2px 6px 0 rgb(206 206 238 / 54%);
+}
+
+.me-2 {
+    margin-right: .5rem !important;
+}
+/* footer */
+/* ---------------------------------------------  */
+*/
+footer {
+    text-align: center;
+    padding: 30px 0px;
+}
+
+footer p {
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #232d39;
+    font-size: 13px;
+}
+
+    footer p a {
+        cursor: pointer;
+        color: #ed563b;
+    }
+
+        footer p a:hover {
+            color: #ed563b;
+        }
