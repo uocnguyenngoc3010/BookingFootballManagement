@@ -39,7 +39,7 @@ namespace DataAccess
         {
             List<BookingRecord> records = new List<BookingRecord>();
 
-            records = _context.BookingRecords.Include(r => r.BookingRequest).Include(r => r.staff)
+            records = _context.BookingRecords.Include(r => r.BookingRequest).Include(r => r.Staff)
                                         .Include(r => r.BookingRequest.Customer).OrderByDescending(r => r.Id).ToList();
 
             System.Diagnostics.Debug.WriteLine("Debug Get All Records");
