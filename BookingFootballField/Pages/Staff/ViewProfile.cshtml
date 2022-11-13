@@ -7,9 +7,11 @@
 <h1 style="justify-content: center;
     padding-top: 1rem;
     display: flex;
-    font-weight: 700;">Staff Details</h1>
-    <hr />
-<div>
+    font-weight: 700;">
+        Staff Details
+</h1>
+<hr />
+@*<div>
     <dl class="row" style="margin:0 15px;">
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.staff.Email)
@@ -41,8 +43,55 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.staff.IsActived)
         </dd>*@
-    </dl>
+@*    </dl>
 </div>
 <div style="padding:0 2rem 10px">
     <a asp-page="./Edit" asp-route-id="@Model.staff.Id">Edit</a> |    
-</div>
+    <a class="btn btn-primary" asp-page="Index">Back to List</a>
+</div>*@
+<table class="table" style="margin-top:2rem">
+    <thead style="text-align:center">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.staff.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.staff.Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.staff.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.staff.PhoneNumber)
+            </th>
+            <th>
+                Make A Request
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="text-align:center">
+            <td>
+                @Html.DisplayFor(model => model.staff.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.staff.Password)
+            </td>
+            <td style="align-content:center">
+                @Html.DisplayFor(model => model.staff.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.staff.PhoneNumber)
+            </td>
+            <td>
+
+            </td>
+            <td>
+                <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@Model.staff.Id">Edit</a> |    
+                <a class="btn btn-primary" asp-page="Index">Back to List</a>  
+            </td>
+        </tr>
+
+    </tbody>
+</table>

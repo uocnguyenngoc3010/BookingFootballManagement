@@ -21,10 +21,8 @@ namespace BookingFootballField.Pages.Staffs
             _context = context;
             _staffRepository = new StaffRepository();
         }
-
         [BindProperty]
         public BusinessObject.Model.staff staff { get; set; }
-
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             isAdmin = HttpContext.Session.GetString("isAdmin");
@@ -45,7 +43,6 @@ namespace BookingFootballField.Pages.Staffs
             }
             return Page();
         }
-
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
@@ -54,9 +51,6 @@ namespace BookingFootballField.Pages.Staffs
             {
                 return Page();
             }
-
-
-
             try
             {
                 _staffRepository.Update(staff);
@@ -72,10 +66,8 @@ namespace BookingFootballField.Pages.Staffs
                     throw;
                 }
             }
-
             return RedirectToPage("./Index");
         }
-
         private bool staffExists(int id)
         {
             return _context.staff.Any(e => e.Id == id);

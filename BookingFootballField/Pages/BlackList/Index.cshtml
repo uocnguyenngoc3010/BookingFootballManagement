@@ -5,14 +5,12 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>BlackList</h1>
+<h1 style="display: flex;
+    padding-top: 1rem;
+    justify-content: center;
+    font-weight: 800;">BlackList</h1>
 
-<p>
-    <a asp-page="Ban">Ban</a>
-</p>
-<div>
-    <a asp-page="BlackListHistory">Black list history</a>
-</div>
+
 @{
     ICustomerRepository customerRepository = new CustomerRepository();
     IBlackListRepository blackListRepository = new BlackListRepository();
@@ -77,3 +75,9 @@
             </tbody>
 
 </table>
+<div >
+     <a class="btn btn-primary" asp-page="Ban">Ban</a>
+    <a class="btn btn-primary" asp-page="BlackListHistory">Black list history</a>
+</div>
+
+   
