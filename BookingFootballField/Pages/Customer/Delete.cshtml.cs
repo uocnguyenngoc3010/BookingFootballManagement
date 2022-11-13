@@ -45,7 +45,7 @@ namespace BookingFieldManagement.Pages.Customer
             {
                 return RedirectToPage("/Index");
             }
-            return Page();
+          
             if (id == null)
             {
                 return NotFound();
