@@ -33,7 +33,7 @@
                                         <p>@Html.DisplayNameFor(model => model.FootballFields[0].Capacity): @Html.DisplayFor(modelItem => item.Capacity) </p>
                                     </div>
                                 </div>
-                                <form class="bookBtn" action="viewEventDetail">
+                                    <form style="margin-left:-2rem; width:80px" class="bookBtn" action="viewEventDetail">
                                       <a class="btn btn-primary" style="width=150px;height=100px;" asp-page="./Request" asp-route-fieldId="@item.Id">Book now!</a> 
                                 </form>
                             </div>
