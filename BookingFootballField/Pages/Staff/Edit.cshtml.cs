@@ -26,9 +26,13 @@ namespace BookingFootballField.Pages.Staffs
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             isAdmin = HttpContext.Session.GetString("isAdmin");
+            staffId = HttpContext.Session.GetString("StaffId");
             if (isAdmin == null)
             {
-                return RedirectToPage("/Index");
+                if(staffId == null ||id != int.Parse(staffId)){
+                    return RedirectToPage("/Index");
+                }
+                
             }
             if (id == null)
             {
