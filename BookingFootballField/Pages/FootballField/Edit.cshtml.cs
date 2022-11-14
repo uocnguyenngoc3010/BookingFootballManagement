@@ -30,6 +30,8 @@ namespace BookingFieldManagement.Pages.FootballField
         public string isAdmin;
         public string customerId;
         [BindProperty]
+        public string tempImg { get; set; }
+        [BindProperty]
         public IFormFile FileUpload { get; set; }
         [BindProperty]
         public string Imgpath { get; set; }
@@ -56,7 +58,9 @@ namespace BookingFieldManagement.Pages.FootballField
             }
 
             //FootballField = await _context.FootballFields.FirstOrDefaultAsync(m => m.Id == id);
-            FootballField = footballFieldRepository.GetByID((int)id);
+            FootballField =  footballFieldRepository.GetByID((int)id);
+            tempImg= FootballField.Image;
+
             if (FootballField == null)
             {
                 return NotFound();
@@ -74,20 +78,29 @@ namespace BookingFieldManagement.Pages.FootballField
             }
 
             //_context.Attach(FootballField).State = EntityState.Modified;
-
+               
             try
             {
                 //await _context.SaveChangesAsync();
 
-                var file = Path.Combine(webHostEnvironment.WebRootPath, @"image", FileUpload.FileName);
-                using (var fileStream = new FileStream(file, FileMode.Create))
+                if (FileUpload != null)
                 {
-                    FileUpload.CopyTo(fileStream);
-                    Imgpath = @"\image\" + FileUpload.FileName;
+                    var file = Path.Combine(webHostEnvironment.WebRootPath, @"image", FileUpload.FileName);
+                    using (var fileStream = new FileStream(file, FileMode.Create))
+                    {
+                        FileUpload.CopyTo(fileStream);
+                        Imgpath = @"\image\" + FileUpload.FileName;
 
 
+                    }
+                    FootballField.Image = Imgpath;
+                } else
+                {
+                    
+                    FootballField.Image = FootballField.Image;
                 }
-                FootballField.Image = Imgpath;
+
+               
                 footballFieldRepository.Update(FootballField);
             }
             catch (DbUpdateConcurrencyException)
