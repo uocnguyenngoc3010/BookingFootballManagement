@@ -71,7 +71,7 @@ namespace BookingFootballField.Pages.BookingField
                 CancelableApprovedRequests.Add(reqRepo.IsApprovedRequestCancelable(req.Id));
             }
 
-            return Page();
+             return Page();
         }
 
         // This is for customer to cancel pending request

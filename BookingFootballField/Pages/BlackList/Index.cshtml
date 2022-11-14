@@ -66,6 +66,7 @@
                                     <a asp-page="./Edit" asp-route-id="@blacklist.Id">Edit</a> |
                                     <a asp-page="./Details" asp-route-id="@blacklist.Id">Details</a> |
                                     <a asp-page="./Delete" asp-route-id="@blacklist.Id">Unban</a>
+                                    <a asp-page="./Create" asp-route-id="@item.Id">Ban</a>
                                 </td>
                     }
                         </tr>
@@ -75,8 +76,8 @@
             </tbody>
 
 </table>
-<div >
-     <a class="btn btn-primary" asp-page="Ban">Ban</a>
+<div>
+     <a class="btn btn-primary" asp-page="BanL">Ban</a>
     <a class="btn btn-primary" asp-page="BlackListHistory">Black list history</a>
 </div>
 

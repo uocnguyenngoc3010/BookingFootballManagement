@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingFootballField", "BookingFootballField.csproj", "{C4B65965-4DA2-4903-A939-F2F4F5A5F19F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingFootballField", "BookingFootballField.csproj", "{C4B65965-4DA2-4903-A939-F2F4F5A5F19F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessObject", "..\BusinessObject\BusinessObject.csproj", "{86F38FC7-80D9-4D1D-A255-511D25D599D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessObject", "..\BusinessObject\BusinessObject.csproj", "{86F38FC7-80D9-4D1D-A255-511D25D599D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "..\DataAccess\DataAccess.csproj", "{DB4957DA-AC75-4FF3-A2F1-B44886379941}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "..\DataAccess\DataAccess.csproj", "{DB4957DA-AC75-4FF3-A2F1-B44886379941}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
