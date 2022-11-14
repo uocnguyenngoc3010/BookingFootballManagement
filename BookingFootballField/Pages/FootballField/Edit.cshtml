@@ -40,7 +40,7 @@
                 <span asp-validation-for="FootballField.Status" class="text-danger"></span>
             </div>
 
-
+            <h4 class="alert-danger">@ViewData["Message"]</h4>
             <div class="mb-3">
                 <input type="file" asp-for="@Model.FileUpload" class="form-control" />
             </div>
@@ -53,6 +53,9 @@
             <div class="fixImga" style="height:500px;width:500px; ">
                 <img style="object-fit:cover;width: 500px" src="@Model.tempImg" />
             </div>
+
+
+
         </form>
     </div>
 </div>

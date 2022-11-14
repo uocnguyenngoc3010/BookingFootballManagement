@@ -58,8 +58,8 @@ namespace BookingFieldManagement.Pages.FootballField
             }
 
             //FootballField = await _context.FootballFields.FirstOrDefaultAsync(m => m.Id == id);
-            FootballField =  footballFieldRepository.GetByID((int)id);
-            tempImg= FootballField.Image;
+            FootballField = footballFieldRepository.GetByID((int)id);
+            tempImg = FootballField.Image;
 
             if (FootballField == null)
             {
@@ -78,29 +78,35 @@ namespace BookingFieldManagement.Pages.FootballField
             }
 
             //_context.Attach(FootballField).State = EntityState.Modified;
-               
+
             try
             {
                 //await _context.SaveChangesAsync();
 
                 if (FileUpload != null)
                 {
-                    var file = Path.Combine(webHostEnvironment.WebRootPath, @"image", FileUpload.FileName);
-                    using (var fileStream = new FileStream(file, FileMode.Create))
+                    if (FileUpload.FileName.Contains(".jpg") || FileUpload.FileName.Contains(".png"))
                     {
-                        FileUpload.CopyTo(fileStream);
-                        Imgpath = @"\image\" + FileUpload.FileName;
-
-
+                        var file = Path.Combine(webHostEnvironment.WebRootPath, @"image", FileUpload.FileName);
+                        using (var fileStream = new FileStream(file, FileMode.Create))
+                        {
+                            FileUpload.CopyTo(fileStream);
+                            Imgpath = @"\image\" + FileUpload.FileName;
+                        }
+                        FootballField.Image = Imgpath;
+                    } else
+                    {
+                        ViewData["Message"] = "Only allow PNG or JPG !! ";
+                        return Page();
                     }
-                    FootballField.Image = Imgpath;
-                } else
+                }
+                else
                 {
-                    
+
                     FootballField.Image = FootballField.Image;
                 }
 
-               
+
                 footballFieldRepository.Update(FootballField);
             }
             catch (DbUpdateConcurrencyException)
